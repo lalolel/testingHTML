@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML hyperlinks and navigation">
+    <title>HTML Links | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .link-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .link-type {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .demo-nav {
+            background: #343a40;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .demo-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .demo-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .demo-nav a:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Links</h1>
+            <p><strong>Links and Media Lesson 1:</strong> Creating navigation and connections between content</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML Links</h2>
+                <p>Hyperlinks are what make the web "worldwide" - they connect pages, sites, and resources together. The <code>&lt;a&gt;</code> (anchor) element creates hyperlinks to other web pages, files, locations within the same page, email addresses, or any other URL.</p>
+                
+                <div class="example">
+                    <h3>Basic Link Syntax</h3>
+                    <div class="code-example">&lt;a href="destination"&gt;Link Text&lt;/a&gt;</div>
+                    <ul>
+                        <li><strong>href</strong> - The destination URL or path</li>
+                        <li><strong>Link Text</strong> - The clickable text users see</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Types of Links</h2>
+                
+                <div class="link-types">
+                    <div class="link-type">
+                        <h4>🌐 External Links</h4>
+                        <p>Links to other websites</p>
+                        <code>href="https://example.com"</code>
+                    </div>
+                    <div class="link-type">
+                        <h4>📄 Internal Links</h4>
+                        <p>Links within your site</p>
+                        <code>href="./page.html"</code>
+                    </div>
+                    <div class="link-type">
+                        <h4>⚓ Anchor Links</h4>
+                        <p>Links to page sections</p>
+                        <code>href="#section1"</code>
+                    </div>
+                    <div class="link-type">
+                        <h4>📧 Email Links</h4>
+                        <p>Links to email addresses</p>
+                        <code>href="mailto:user@example.com"</code>
+                    </div>
+                    <div class="link-type">
+                        <h4>📞 Phone Links</h4>
+                        <p>Links to phone numbers</p>
+                        <code>href="tel:+1234567890"</code>
+                    </div>
+                    <div class="link-type">
+                        <h4>📁 File Links</h4>
+                        <p>Links to downloadable files</p>
+                        <code>href="./document.pdf"</code>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>External Links</h2>
+                <p>External links point to resources on other domains. They should typically open in new tabs and include security attributes.</p>
+                
+                <div class="example">
+                    <h3>Basic External Links</h3>
+                    <div class="code-example">&lt;a href="https://www.mozilla.org"&gt;Visit Mozilla&lt;/a&gt;
+&lt;a href="https://developer.mozilla.org" target="_blank"&gt;MDN Docs (New Tab)&lt;/a&gt;
+&lt;a href="https://github.com" target="_blank" rel="noopener noreferrer"&gt;GitHub (Secure)&lt;/a&gt;</div>
+                    
+                    <div class="result">
+                        <a href="https://www.mozilla.org">Visit Mozilla</a><br>
+                        <a href="https://developer.mozilla.org" target="_blank">MDN Docs (New Tab)</a><br>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub (Secure)</a>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <h4>Security Best Practice</h4>
+                    <p>When using <code>target="_blank"</code>, always include <code>rel="noopener noreferrer"</code> to prevent security vulnerabilities and performance issues.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Internal Links</h2>
+                <p>Internal links connect pages within your website. Use relative paths for better portability.</p>
+                
+                <div class="example">
+                    <h3>Relative Path Examples</h3>
+                    <div class="code-example">&lt;!-- Same directory --&gt;
+&lt;a href="about.html"&gt;About Page&lt;/a&gt;
+
+&lt;!-- Subdirectory --&gt;
+&lt;a href="./images/photo.jpg"&gt;View Photo&lt;/a&gt;
+&lt;a href="blog/post1.html"&gt;Blog Post 1&lt;/a&gt;
+
+&lt;!-- Parent directory --&gt;
+&lt;a href="../index.html"&gt;Back to Home&lt;/a&gt;
+
+&lt;!-- Root directory --&gt;
+&lt;a href="/contact.html"&gt;Contact Us&lt;/a&gt;</div>
+                    
+                    <div class="result">
+                        <a href="#internal-demo">About Page (Demo)</a><br>
+                        <a href="#internal-demo">View Photo (Demo)</a><br>
+                        <a href="#internal-demo">Blog Post 1 (Demo)</a><br>
+                        <a href="#internal-demo">Back to Home (Demo)</a><br>
+                        <a href="#internal-demo">Contact Us (Demo)</a>
+                        <p id="internal-demo"><em>These are demo links that point to this section.</em></p>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Path Type</th>
+                            <th>Syntax</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Same directory</td>
+                            <td><code>page.html</code></td>
+                            <td>File in the same folder</td>
+                        </tr>
+                        <tr>
+                            <td>Current directory</td>
+                            <td><code>./page.html</code></td>
+                            <td>Explicit current directory reference</td>
+                        </tr>
+                        <tr>
+                            <td>Subdirectory</td>
+                            <td><code>folder/page.html</code></td>
+                            <td>File in a subfolder</td>
+                        </tr>
+                        <tr>
+                            <td>Parent directory</td>
+                            <td><code>../page.html</code></td>
+                            <td>File in the parent folder</td>
+                        </tr>
+                        <tr>
+                            <td>Root directory</td>
+                            <td><code>/page.html</code></td>
+                            <td>File from the site root</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Anchor Links (Page Sections)</h2>
+                <p>Anchor links allow navigation within the same page by linking to elements with specific IDs.</p>
+                
+                <div class="example">
+                    <h3>Creating Anchor Links</h3>
+                    <div class="code-example">&lt;!-- Navigation links --&gt;
+&lt;nav&gt;
+    &lt;a href="#introduction"&gt;Introduction&lt;/a&gt; |
+    &lt;a href="#examples"&gt;Examples&lt;/a&gt; |
+    &lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;!-- Target sections --&gt;
+&lt;section id="introduction"&gt;
+    &lt;h2&gt;Introduction&lt;/h2&gt;
+    &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="examples"&gt;
+    &lt;h2&gt;Examples&lt;/h2&gt;
+    &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section id="conclusion"&gt;
+    &lt;h2&gt;Conclusion&lt;/h2&gt;
+    &lt;p&gt;Content here...&lt;/p&gt;
+&lt;/section&gt;</div>
+                    
+                    <div class="result">
+                        <nav style="margin-bottom: 20px;">
+                            <a href="#demo-intro">Introduction</a> |
+                            <a href="#demo-examples">Examples</a> |
+                            <a href="#demo-conclusion">Conclusion</a>
+                        </nav>
+                        
+                        <section id="demo-intro" style="padding: 10px; border: 1px solid #ddd; margin: 10px 0;">
+                            <h4>Introduction</h4>
+                            <p>This is the introduction section that can be linked to directly.</p>
+                        </section>
+                        
+                        <section id="demo-examples" style="padding: 10px; border: 1px solid #ddd; margin: 10px 0;">
+                            <h4>Examples</h4>
+                            <p>This is the examples section with practical demonstrations.</p>
+                        </section>
+                        
+                        <section id="demo-conclusion" style="padding: 10px; border: 1px solid #ddd; margin: 10px 0;">
+                            <h4>Conclusion</h4>
+                            <p>This is the conclusion section summarizing key points.</p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Email and Phone Links</h2>
+                
+                <div class="example">
+                    <h3>Email Links (mailto:)</h3>
+                    <div class="code-example">&lt;!-- Basic email link --&gt;
+&lt;a href="mailto:contact@example.com"&gt;Send Email&lt;/a&gt;
+
+&lt;!-- Email with subject --&gt;
+&lt;a href="mailto:support@example.com?subject=Help Request"&gt;Get Support&lt;/a&gt;
+
+&lt;!-- Email with subject and body --&gt;
+&lt;a href="mailto:info@example.com?subject=Inquiry&amp;body=Hello, I would like to know more about..."&gt;
+    Send Inquiry
+&lt;/a&gt;
+
+&lt;!-- Multiple recipients --&gt;
+&lt;a href="mailto:user1@example.com,user2@example.com?cc=manager@example.com&amp;bcc=admin@example.com"&gt;
+    Send to Team
+&lt;/a&gt;</div>
+                    
+                    <div class="result">
+                        <a href="mailto:contact@example.com">Send Email</a><br>
+                        <a href="mailto:support@example.com?subject=Help Request">Get Support</a><br>
+                        <a href="mailto:info@example.com?subject=Inquiry&body=Hello, I would like to know more about...">Send Inquiry</a><br>
+                        <a href="mailto:user1@example.com,user2@example.com?cc=manager@example.com&bcc=admin@example.com">Send to Team</a>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Phone Links (tel:)</h3>
+                    <div class="code-example">&lt;!-- Basic phone link --&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us: (123) 456-7890&lt;/a&gt;
+
+&lt;!-- International number --&gt;
+&lt;a href="tel:+44-20-7946-0958"&gt;UK Office: +44 20 7946 0958&lt;/a&gt;
+
+&lt;!-- Extension --&gt;
+&lt;a href="tel:+1234567890,123"&gt;Call Main Line (Ext. 123)&lt;/a&gt;</div>
+                    
+                    <div class="result">
+                        <a href="tel:+1234567890">Call Us: (123) 456-7890</a><br>
+                        <a href="tel:+44-20-7946-0958">UK Office: +44 20 7946 0958</a><br>
+                        <a href="tel:+1234567890,123">Call Main Line (Ext. 123)</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>File Download Links</h2>
+                <p>Links can point to files for download. Use the <code>download</code> attribute to suggest a filename.</p>
+                
+                <div class="example">
+                    <h3>Download Links</h3>
+                    <div class="code-example">&lt;!-- Basic file link --&gt;
+&lt;a href="./documents/guide.pdf"&gt;User Guide (PDF)&lt;/a&gt;
+
+&lt;!-- Forced download with custom name --&gt;
+&lt;a href="./files/report-2023.pdf" download="annual-report.pdf"&gt;
+    Download Annual Report
+&lt;/a&gt;
+
+&lt;!-- Different file types --&gt;
+&lt;a href="./downloads/template.docx"&gt;Word Template&lt;/a&gt;
+&lt;a href="./downloads/data.xlsx"&gt;Excel Spreadsheet&lt;/a&gt;
+&lt;a href="./downloads/presentation.pptx"&gt;PowerPoint Presentation&lt;/a&gt;</div>
+                    
+                    <div class="result">
+                        <a href="#download-demo">User Guide (PDF) - Demo Link</a><br>
+                        <a href="#download-demo" download="annual-report.pdf">Download Annual Report - Demo Link</a><br>
+                        <a href="#download-demo">Word Template - Demo Link</a><br>
+                        <a href="#download-demo">Excel Spreadsheet - Demo Link</a><br>
+                        <a href="#download-demo">PowerPoint Presentation - Demo Link</a>
+                        <p id="download-demo"><em>These are demo links for illustration purposes.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Link Attributes</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Purpose</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>href</code></td>
+                            <td>Specifies the link destination</td>
+                            <td><code>href="https://example.com"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>target</code></td>
+                            <td>Specifies where to open the link</td>
+                            <td><code>target="_blank"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>rel</code></td>
+                            <td>Relationship between current and linked document</td>
+                            <td><code>rel="noopener noreferrer"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>download</code></td>
+                            <td>Prompts download with optional filename</td>
+                            <td><code>download="filename.pdf"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>Additional information (tooltip)</td>
+                            <td><code>title="Learn more about HTML"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>hreflang</code></td>
+                            <td>Language of the linked document</td>
+                            <td><code>hreflang="es"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example">
+                    <h3>Target Attribute Values</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>_self</code></td>
+                                <td>Default - Opens in the same frame/tab</td>
+                            </tr>
+                            <tr>
+                                <td><code>_blank</code></td>
+                                <td>Opens in a new window or tab</td>
+                            </tr>
+                            <tr>
+                                <td><code>_parent</code></td>
+                                <td>Opens in the parent frame</td>
+                            </tr>
+                            <tr>
+                                <td><code>_top</code></td>
+                                <td>Opens in the full body of the window</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Navigation Examples</h2>
+                
+                <div class="example">
+                    <h3>Main Navigation Menu</h3>
+                    <div class="code-example">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/portfolio.html"&gt;Portfolio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</div>
+                    
+                    <div class="result">
+                        <nav class="demo-nav">
+                            <ul>
+                                <li><a href="#nav-demo">Home</a></li>
+                                <li><a href="#nav-demo">About</a></li>
+                                <li><a href="#nav-demo">Services</a></li>
+                                <li><a href="#nav-demo">Portfolio</a></li>
+                                <li><a href="#nav-demo">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <p id="nav-demo"><em>Demo navigation menu with hover effects</em></p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Breadcrumb Navigation</h3>
+                    <div class="code-example">&lt;nav aria-label="Breadcrumb"&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products/"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products/laptops/"&gt;Laptops&lt;/a&gt;&lt;/li&gt;
+        &lt;li aria-current="page"&gt;Gaming Laptops&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;</div>
+                    
+                    <div class="result">
+                        <nav aria-label="Breadcrumb" style="padding: 10px; background: #f8f9fa; border-radius: 4px;">
+                            <ol style="display: flex; list-style: none; padding: 0; margin: 0;">
+                                <li style="margin-right: 10px;"><a href="#breadcrumb-demo">Home</a> /</li>
+                                <li style="margin-right: 10px;"><a href="#breadcrumb-demo">Products</a> /</li>
+                                <li style="margin-right: 10px;"><a href="#breadcrumb-demo">Laptops</a> /</li>
+                                <li aria-current="page">Gaming Laptops</li>
+                            </ol>
+                        </nav>
+                        <p id="breadcrumb-demo"><em>Breadcrumb navigation shows the current location</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Accessibility Best Practices</h2>
+                
+                <div class="tip">
+                    <h3>✅ Link Accessibility Guidelines</h3>
+                    <ul>
+                        <li><strong>Use descriptive link text</strong> - Avoid "click here" or "read more"</li>
+                        <li><strong>Ensure sufficient color contrast</strong> - Links should be easily distinguishable</li>
+                        <li><strong>Provide focus indicators</strong> - Make links keyboard navigable</li>
+                        <li><strong>Use ARIA labels when needed</strong> - Add context for screen readers</li>
+                        <li><strong>Test with keyboard navigation</strong> - Ensure all links are reachable via Tab</li>
+                        <li><strong>Indicate external links</strong> - Let users know when leaving your site</li>
+                    </ul>
+                </div>
+
+                <div class="example">
+                    <h3>Good vs Poor Link Text</h3>
+                    <div class="code-example">&lt;!-- ❌ Poor link text --&gt;
+&lt;p&gt;To learn more about HTML5 features, &lt;a href="html5-guide.html"&gt;click here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Download our guide &lt;a href="guide.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- ✅ Good link text --&gt;
+&lt;p&gt;Read our comprehensive &lt;a href="html5-guide.html"&gt;HTML5 features guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Download the &lt;a href="guide.pdf"&gt;beginner's HTML guide (PDF, 2MB)&lt;/a&gt;.&lt;/p&gt;</div>
+                    
+                    <div class="result">
+                        <div style="padding: 10px; background: #f8d7da; border-radius: 4px; margin: 10px 0;">
+                            <strong>❌ Poor examples:</strong><br>
+                            <p>To learn more about HTML5 features, <a href="#accessibility-demo">click here</a>.</p>
+                            <p>Download our guide <a href="#accessibility-demo">here</a>.</p>
+                        </div>
+                        <div style="padding: 10px; background: #d4edda; border-radius: 4px; margin: 10px 0;">
+                            <strong>✅ Good examples:</strong><br>
+                            <p>Read our comprehensive <a href="#accessibility-demo">HTML5 features guide</a>.</p>
+                            <p>Download the <a href="#accessibility-demo">beginner's HTML guide (PDF, 2MB)</a>.</p>
+                        </div>
+                        <p id="accessibility-demo"><em>Notice how the good examples clearly describe what the link leads to.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Link Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Avoid These Common Mistakes</h3>
+                    <ul>
+                        <li><strong>Broken links</strong> - Always test your links before publishing</li>
+                        <li><strong>Non-descriptive link text</strong> - "Click here" doesn't help users or SEO</li>
+                        <li><strong>Missing security attributes</strong> - Always use <code>rel="noopener noreferrer"</code> with <code>target="_blank"</code></li>
+                        <li><strong>Links that don't look like links</strong> - Maintain visual consistency</li>
+                        <li><strong>Opening everything in new tabs</strong> - Let users control their browsing experience</li>
+                        <li><strong>Forgetting mobile users</strong> - Ensure links are easily tappable on mobile devices</li>
+                        <li><strong>Not indicating file types</strong> - Users should know what they're downloading</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Advanced Link Techniques</h2>
+                
+                <div class="example">
+                    <h3>Skip Links (Accessibility)</h3>
+                    <div class="code-example">&lt;!-- Skip link for keyboard users --&gt;
+&lt;a href="#main-content" class="skip-link"&gt;Skip to main content&lt;/a&gt;
+
+&lt;nav&gt;
+    &lt;!-- Navigation menu --&gt;
+&lt;/nav&gt;
+
+&lt;main id="main-content"&gt;
+    &lt;!-- Main content starts here --&gt;
+&lt;/main&gt;</div>
+                </div>
+
+                <div class="example">
+                    <h3>Link States with CSS</h3>
+                    <div class="code-example">&lt;style&gt;
+a:link { color: #0066cc; }        /* Unvisited links */
+a:visited { color: #800080; }     /* Visited links */
+a:hover { color: #ff6600; }       /* Mouse over */
+a:active { color: #ff0000; }      /* Click moment */
+a:focus { outline: 2px solid #0066cc; } /* Keyboard focus */
+&lt;/style&gt;</div>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./images.html">Learn about HTML Images</a></p>
+            <p><a href="../02-text-formatting/lists.html">← Previous: HTML Lists</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

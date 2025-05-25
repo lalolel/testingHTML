@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML attributes and how to use them">
+    <title>HTML Attributes | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .demo-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .demo-input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Attributes</h1>
+            <p><strong>Lesson 3:</strong> Adding information and functionality to HTML elements</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>What are HTML Attributes?</h2>
+                <p>Attributes provide additional information about HTML elements. They are always specified in the opening tag and usually come in name/value pairs.</p>
+                
+                <div class="example">
+                    <h3>Basic Attribute Syntax</h3>
+                    <div class="code-example">&lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;</div>
+                    
+                    <h4>Example:</h4>
+                    <div class="code-example">&lt;img src="photo.jpg" alt="A beautiful sunset" width="300"&gt;</div>
+                    
+                    <ul>
+                        <li><code>src</code> - specifies the image source</li>
+                        <li><code>alt</code> - provides alternative text</li>
+                        <li><code>width</code> - sets the image width</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Global Attributes</h2>
+                <p>These attributes can be used on any HTML element:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Purpose</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>id</code></td>
+                            <td>Unique identifier for an element</td>
+                            <td><code>&lt;div id="header"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>class</code></td>
+                            <td>CSS class name(s) for styling</td>
+                            <td><code>&lt;p class="intro highlight"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>style</code></td>
+                            <td>Inline CSS styling</td>
+                            <td><code>&lt;span style="color: red;"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>Tooltip text on hover</td>
+                            <td><code>&lt;abbr title="HyperText Markup Language"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>lang</code></td>
+                            <td>Language of the element's content</td>
+                            <td><code>&lt;span lang="es"&gt;Hola&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>hidden</code></td>
+                            <td>Hides the element</td>
+                            <td><code>&lt;div hidden&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Practical Examples</h2>
+                
+                <div class="example">
+                    <h3>1. ID Attribute</h3>
+                    <p>Used to uniquely identify an element (should be unique on the page):</p>
+                    <div class="code-example">&lt;h1 id="main-title"&gt;Welcome to My Website&lt;/h1&gt;
+&lt;p id="intro-paragraph"&gt;This is the introduction.&lt;/p&gt;</div>
+                    
+                    <div class="result">
+                        <h1 id="main-title">Welcome to My Website</h1>
+                        <p id="intro-paragraph">This is the introduction.</p>
+                    </div>
+                    
+                    <div class="tip">
+                        <strong>Use cases for ID:</strong>
+                        <ul>
+                            <li>Linking to sections: <code>&lt;a href="#main-title"&gt;</code></li>
+                            <li>CSS styling: <code>#main-title { color: blue; }</code></li>
+                            <li>JavaScript selection: <code>document.getElementById('main-title')</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>2. Class Attribute</h3>
+                    <p>Used to group elements for styling or scripting (can be reused):</p>
+                    <div class="code-example">&lt;p class="highlight important"&gt;Important notice&lt;/p&gt;
+&lt;p class="highlight"&gt;Another highlighted paragraph&lt;/p&gt;
+&lt;span class="important"&gt;Important text&lt;/span&gt;</div>
+                    
+                    <div class="result">
+                        <p style="background: yellow; font-weight: bold;">Important notice</p>
+                        <p style="background: yellow;">Another highlighted paragraph</p>
+                        <span style="font-weight: bold;">Important text</span>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>3. Title Attribute</h3>
+                    <p>Provides additional information shown as a tooltip:</p>
+                    <div class="code-example">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; is awesome!
+&lt;button title="Click to submit the form"&gt;Submit&lt;/button&gt;</div>
+                    
+                    <div class="result">
+                        <abbr title="HyperText Markup Language">HTML</abbr> is awesome!
+                        <button class="demo-button" title="Click to submit the form">Submit</button>
+                        <p><em>Hover over the elements above to see tooltips!</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Element-Specific Attributes</h2>
+                
+                <h3>Link Attributes</h3>
+                <div class="code-example">&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;External Link&lt;/a&gt;
+&lt;a href="mailto:contact@example.com"&gt;Email Us&lt;/a&gt;
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;</div>
+                
+                <div class="result">
+                    <a href="https://example.com" target="_blank" rel="noopener">External Link</a><br>
+                    <a href="mailto:contact@example.com">Email Us</a><br>
+                    <a href="#section1">Go to Section 1</a>
+                </div>
+
+                <h3>Image Attributes</h3>
+                <div class="code-example">&lt;img src="https://via.placeholder.com/150" 
+     alt="Placeholder image" 
+     width="150" 
+     height="150"
+     loading="lazy"&gt;</div>
+                
+                <div class="result">
+                    <img src="https://via.placeholder.com/150" 
+                         alt="Placeholder image" 
+                         width="150" 
+                         height="150"
+                         loading="lazy">
+                </div>
+
+                <h3>Form Input Attributes</h3>
+                <div class="code-example">&lt;input type="text" 
+       name="username" 
+       placeholder="Enter your username" 
+       required 
+       maxlength="20"&gt;
+
+&lt;input type="email" 
+       name="email" 
+       placeholder="your@email.com" 
+       required&gt;</div>
+                
+                <div class="result">
+                    <input type="text" 
+                           class="demo-input"
+                           name="username" 
+                           placeholder="Enter your username" 
+                           required 
+                           maxlength="20"><br>
+                    <input type="email" 
+                           class="demo-input"
+                           name="email" 
+                           placeholder="your@email.com" 
+                           required>
+                </div>
+            </section>
+
+            <section>
+                <h2>Boolean Attributes</h2>
+                <p>Some attributes don't need values - their presence indicates "true":</p>
+                
+                <div class="code-example">&lt;input type="checkbox" checked&gt; Pre-checked
+&lt;input type="text" disabled&gt; Disabled input
+&lt;script async src="script.js"&gt;&lt;/script&gt;
+&lt;div hidden&gt;Hidden content&lt;/div&gt;</div>
+                
+                <div class="result">
+                    <input type="checkbox" checked> Pre-checked<br>
+                    <input type="text" class="demo-input" disabled placeholder="Disabled input"><br>
+                    <div style="display: none;">Hidden content (you can't see this!)</div>
+                </div>
+                
+                <div class="tip">
+                    <strong>Boolean attributes can be written in several ways:</strong>
+                    <ul>
+                        <li><code>checked</code> (recommended)</li>
+                        <li><code>checked=""</code></li>
+                        <li><code>checked="checked"</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Attribute Best Practices</h2>
+                
+                <div class="warning">
+                    <h3>❌ Common Mistakes</h3>
+                    <ul>
+                        <li><strong>Missing quotes:</strong> <code>&lt;img src=photo.jpg&gt;</code> (should be <code>src="photo.jpg"</code>)</li>
+                        <li><strong>Duplicate IDs:</strong> Having multiple elements with the same ID</li>
+                        <li><strong>Invalid characters:</strong> Using spaces or special characters in IDs</li>
+                        <li><strong>Missing alt text:</strong> Images without alt attributes</li>
+                    </ul>
+                </div>
+                
+                <div class="tip">
+                    <h3>✅ Best Practices</h3>
+                    <ul>
+                        <li><strong>Always use quotes</strong> around attribute values</li>
+                        <li><strong>Use lowercase</strong> for attribute names</li>
+                        <li><strong>Provide meaningful names</strong> for IDs and classes</li>
+                        <li><strong>Include alt text</strong> for all images</li>
+                        <li><strong>Use semantic naming</strong> (e.g., "navigation" not "blue-box")</li>
+                        <li><strong>Validate your HTML</strong> to catch attribute errors</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Data Attributes</h2>
+                <p>Custom attributes that start with "data-" for storing extra information:</p>
+                
+                <div class="code-example">&lt;div data-user-id="123" data-role="admin"&gt;User Profile&lt;/div&gt;
+&lt;button data-action="delete" data-confirm="Are you sure?"&gt;Delete&lt;/button&gt;</div>
+                
+                <div class="result">
+                    <div data-user-id="123" data-role="admin" style="padding: 10px; background: #f0f0f0; border-radius: 4px;">User Profile</div>
+                    <button class="demo-button" data-action="delete" data-confirm="Are you sure?">Delete</button>
+                </div>
+                
+                <div class="tip">
+                    <strong>Data attributes are useful for:</strong>
+                    <ul>
+                        <li>JavaScript functionality</li>
+                        <li>CSS styling hooks</li>
+                        <li>Storing configuration data</li>
+                        <li>API integration</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="../02-text-formatting/README.md">Learn about Text Formatting</a></p>
+            <p><a href="./elements-and-tags.html">← Previous: HTML Elements and Tags</a> | <a href="../README.md">Back to HTML Basics</a></p>
+        </footer>
+    </div>
+</body>
+</html>

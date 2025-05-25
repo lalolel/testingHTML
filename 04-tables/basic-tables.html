@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the basics of HTML tables">
+    <title>Basic HTML Tables | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        /* Basic table styling */
+        .demo-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .demo-table th,
+        .demo-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .demo-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .demo-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .demo-table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Styled table examples */
+        .styled-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .styled-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        .styled-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .styled-table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .element-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .element-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Basic HTML Tables</h1>
+            <p><strong>Tables Lesson 1:</strong> Creating structured data layouts</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML Tables</h2>
+                <p>HTML tables are used to display data in rows and columns. They're perfect for presenting structured information like financial data, schedules, or comparison charts.</p>
+                
+                <div class="tip">
+                    <h3>When to Use Tables</h3>
+                    <ul>
+                        <li>✅ <strong>Tabular data</strong> - Information that naturally fits in rows and columns</li>
+                        <li>✅ <strong>Data comparison</strong> - Comparing features, prices, or statistics</li>
+                        <li>✅ <strong>Financial reports</strong> - Budgets, invoices, price lists</li>
+                        <li>❌ <strong>Page layout</strong> - Use CSS Grid or Flexbox instead</li>
+                        <li>❌ <strong>Simple lists</strong> - Use &lt;ul&gt; or &lt;ol&gt; elements</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Basic Table Elements</h2>
+                
+                <div class="element-grid">
+                    <div class="element-card">
+                        <h4>&lt;table&gt;</h4>
+                        <p>Container for the entire table</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;tr&gt;</h4>
+                        <p>Table row</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;td&gt;</h4>
+                        <p>Table data cell</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;th&gt;</h4>
+                        <p>Table header cell</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;thead&gt;</h4>
+                        <p>Table header section</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;tbody&gt;</h4>
+                        <p>Table body section</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Simple Table Example</h2>
+                
+                <div class="example">
+                    <h3>Basic Three-Column Table</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John Doe&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jane Smith&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;Los Angeles&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Bob Johnson&lt;/td&gt;
+        &lt;td&gt;35&lt;/td&gt;
+        &lt;td&gt;Chicago&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="demo-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>City</th>
+                            </tr>
+                            <tr>
+                                <td>John Doe</td>
+                                <td>30</td>
+                                <td>New York</td>
+                            </tr>
+                            <tr>
+                                <td>Jane Smith</td>
+                                <td>25</td>
+                                <td>Los Angeles</td>
+                            </tr>
+                            <tr>
+                                <td>Bob Johnson</td>
+                                <td>35</td>
+                                <td>Chicago</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Table Structure with Sections</h2>
+                <p>Organize your tables with semantic sections for better accessibility and styling.</p>
+                
+                <div class="example">
+                    <h3>Table with Header and Body Sections</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Stock&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;$999&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;$25&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Keyboard&lt;/td&gt;
+            &lt;td&gt;$75&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="demo-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Laptop</td>
+                                    <td>$999</td>
+                                    <td>15</td>
+                                </tr>
+                                <tr>
+                                    <td>Mouse</td>
+                                    <td>$25</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <td>Keyboard</td>
+                                    <td>$75</td>
+                                    <td>30</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Table Caption</h2>
+                <p>Use <code>&lt;caption&gt;</code> to provide a title or description for your table.</p>
+                
+                <div class="example">
+                    <h3>Table with Caption</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;caption&gt;Monthly Sales Report - Q1 2023&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Month&lt;/th&gt;
+            &lt;th&gt;Sales&lt;/th&gt;
+            &lt;th&gt;Growth&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;January&lt;/td&gt;
+            &lt;td&gt;$50,000&lt;/td&gt;
+            &lt;td&gt;+5%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;February&lt;/td&gt;
+            &lt;td&gt;$55,000&lt;/td&gt;
+            &lt;td&gt;+10%&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;March&lt;/td&gt;
+            &lt;td&gt;$60,000&lt;/td&gt;
+            &lt;td&gt;+9%&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="demo-table">
+                            <caption style="font-weight: bold; margin-bottom: 10px; color: #333;">Monthly Sales Report - Q1 2023</caption>
+                            <thead>
+                                <tr>
+                                    <th>Month</th>
+                                    <th>Sales</th>
+                                    <th>Growth</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>January</td>
+                                    <td>$50,000</td>
+                                    <td style="color: #28a745;">+5%</td>
+                                </tr>
+                                <tr>
+                                    <td>February</td>
+                                    <td>$55,000</td>
+                                    <td style="color: #28a745;">+10%</td>
+                                </tr>
+                                <tr>
+                                    <td>March</td>
+                                    <td>$60,000</td>
+                                    <td style="color: #28a745;">+9%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Basic Table Styling</h2>
+                <p>CSS makes tables more readable and visually appealing.</p>
+                
+                <div class="example">
+                    <h3>Styled Table Example</h3>
+                    <div class="code-example">&lt;style&gt;
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+&lt;/style&gt;</div>
+                    
+                    <div class="result">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Instructor</th>
+                                    <th>Duration</th>
+                                    <th>Difficulty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>HTML Fundamentals</td>
+                                    <td>Sarah Wilson</td>
+                                    <td>4 weeks</td>
+                                    <td>Beginner</td>
+                                </tr>
+                                <tr>
+                                    <td>CSS Advanced</td>
+                                    <td>Mike Chen</td>
+                                    <td>6 weeks</td>
+                                    <td>Intermediate</td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript Essentials</td>
+                                    <td>Emma Rodriguez</td>
+                                    <td>8 weeks</td>
+                                    <td>Intermediate</td>
+                                </tr>
+                                <tr>
+                                    <td>React Development</td>
+                                    <td>David Kim</td>
+                                    <td>10 weeks</td>
+                                    <td>Advanced</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Table Accessibility Basics</h2>
+                
+                <div class="example">
+                    <h3>Headers with Scope Attributes</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Name&lt;/th&gt;
+            &lt;th scope="col"&gt;Email&lt;/th&gt;
+            &lt;th scope="col"&gt;Department&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Alice Johnson&lt;/th&gt;
+            &lt;td&gt;alice@company.com&lt;/td&gt;
+            &lt;td&gt;Marketing&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Bob Smith&lt;/th&gt;
+            &lt;td&gt;bob@company.com&lt;/td&gt;
+            &lt;td&gt;Engineering&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="demo-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Department</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="background-color: #e9ecef;">Alice Johnson</th>
+                                    <td>alice@company.com</td>
+                                    <td>Marketing</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="background-color: #e9ecef;">Bob Smith</th>
+                                    <td>bob@company.com</td>
+                                    <td>Engineering</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="tip">
+                        <p><strong>Scope attributes help screen readers:</strong></p>
+                        <ul>
+                            <li><code>scope="col"</code> - Header applies to the entire column</li>
+                            <li><code>scope="row"</code> - Header applies to the entire row</li>
+                            <li><code>scope="colgroup"</code> - Header applies to a group of columns</li>
+                            <li><code>scope="rowgroup"</code> - Header applies to a group of rows</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Real-World Table Examples</h2>
+                
+                <div class="example">
+                    <h3>Price Comparison Table</h3>
+                    <div class="result">
+                        <table class="demo-table">
+                            <caption style="font-weight: bold; margin-bottom: 10px;">Web Hosting Plans Comparison</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Feature</th>
+                                    <th scope="col">Basic</th>
+                                    <th scope="col">Professional</th>
+                                    <th scope="col">Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Price/Month</th>
+                                    <td>$5</td>
+                                    <td>$15</td>
+                                    <td>$50</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Storage</th>
+                                    <td>10 GB</td>
+                                    <td>100 GB</td>
+                                    <td>1 TB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bandwidth</th>
+                                    <td>100 GB</td>
+                                    <td>1 TB</td>
+                                    <td>Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email Accounts</th>
+                                    <td>5</td>
+                                    <td>50</td>
+                                    <td>Unlimited</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Support</th>
+                                    <td>Email</td>
+                                    <td>Email + Chat</td>
+                                    <td>24/7 Phone</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Schedule Table</h3>
+                    <div class="result">
+                        <table class="demo-table">
+                            <caption style="font-weight: bold; margin-bottom: 10px;">Weekly Class Schedule</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Monday</th>
+                                    <th scope="col">Tuesday</th>
+                                    <th scope="col">Wednesday</th>
+                                    <th scope="col">Thursday</th>
+                                    <th scope="col">Friday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">9:00 AM</th>
+                                    <td>Math 101</td>
+                                    <td>Physics 201</td>
+                                    <td>Math 101</td>
+                                    <td>Physics 201</td>
+                                    <td>Lab Session</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">11:00 AM</th>
+                                    <td>English 102</td>
+                                    <td>Chemistry 150</td>
+                                    <td>English 102</td>
+                                    <td>Chemistry 150</td>
+                                    <td>Free Period</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2:00 PM</th>
+                                    <td>History 201</td>
+                                    <td>Biology 101</td>
+                                    <td>History 201</td>
+                                    <td>Biology 101</td>
+                                    <td>Study Hall</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Table Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Avoid These Table Mistakes</h3>
+                    <ul>
+                        <li><strong>Using tables for layout</strong> - Tables are for data, not page structure</li>
+                        <li><strong>Missing table headers</strong> - Always use &lt;th&gt; elements for headers</li>
+                        <li><strong>No semantic structure</strong> - Use thead, tbody, and tfoot appropriately</li>
+                        <li><strong>Poor accessibility</strong> - Missing scope attributes and captions</li>
+                        <li><strong>Inconsistent styling</strong> - Keep formatting consistent across cells</li>
+                        <li><strong>Too much data</strong> - Consider pagination or filtering for large datasets</li>
+                        <li><strong>Not responsive</strong> - Tables should work on mobile devices</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Best Practices Summary</h2>
+                
+                <div class="tip">
+                    <h3>✅ Table Best Practices</h3>
+                    <ul>
+                        <li><strong>Use tables for tabular data only</strong> - Not for layout</li>
+                        <li><strong>Include meaningful captions</strong> - Describe the table's purpose</li>
+                        <li><strong>Use semantic HTML</strong> - thead, tbody, th, and td appropriately</li>
+                        <li><strong>Add scope attributes</strong> - Help screen readers understand relationships</li>
+                        <li><strong>Style consistently</strong> - Use CSS for visual formatting</li>
+                        <li><strong>Consider mobile users</strong> - Make tables responsive or provide alternatives</li>
+                        <li><strong>Keep it simple</strong> - Complex tables can be hard to understand</li>
+                        <li><strong>Test accessibility</strong> - Use screen readers to verify usability</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./advanced-tables.html">Learn about Advanced Table Features</a></p>
+            <p><a href="../03-links-and-media/audio-video.html">← Previous: Audio and Video</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

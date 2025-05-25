@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML elements and tags">
+    <title>HTML Elements and Tags | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Elements and Tags</h1>
+            <p><strong>Lesson 2:</strong> Understanding the building blocks of HTML</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>What are HTML Elements?</h2>
+                <p>HTML elements are the building blocks of web pages. They consist of tags that tell the browser how to structure and display content.</p>
+                
+                <div class="example">
+                    <h3>Anatomy of an HTML Element</h3>
+                    <div class="code-example">
+                        &lt;p&gt;This is a paragraph&lt;/p&gt;
+                    </div>
+                    <ul>
+                        <li><strong>Opening tag:</strong> <code>&lt;p&gt;</code></li>
+                        <li><strong>Content:</strong> "This is a paragraph"</li>
+                        <li><strong>Closing tag:</strong> <code>&lt;/p&gt;</code></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Types of HTML Elements</h2>
+                
+                <h3>1. Container Elements (Paired Tags)</h3>
+                <p>These elements have both opening and closing tags and can contain content or other elements.</p>
+                
+                <div class="code-example">
+                    &lt;h1&gt;Main Heading&lt;/h1&gt;<br>
+                    &lt;p&gt;This is a paragraph with &lt;strong&gt;bold text&lt;/strong&gt; inside.&lt;/p&gt;<br>
+                    &lt;div&gt;This is a container&lt;/div&gt;
+                </div>
+                
+                <div class="result">
+                    <strong>Result:</strong><br>
+                    <h1 style="margin: 10px 0;">Main Heading</h1>
+                    <p>This is a paragraph with <strong>bold text</strong> inside.</p>
+                    <div>This is a container</div>
+                </div>
+
+                <h3>2. Self-Closing Elements (Void Elements)</h3>
+                <p>These elements don't have closing tags and cannot contain other elements.</p>
+                
+                <div class="code-example">
+                    &lt;br&gt; &lt;!-- Line break --&gt;<br>
+                    &lt;hr&gt; &lt;!-- Horizontal rule --&gt;<br>
+                    &lt;img src="image.jpg" alt="Description"&gt;<br>
+                    &lt;input type="text" name="username"&gt;
+                </div>
+                
+                <div class="result">
+                    <strong>Result:</strong><br>
+                    Line 1<br>
+                    Line 2 (after line break)
+                    <hr>
+                    <input type="text" placeholder="Username input field">
+                </div>
+            </section>
+
+            <section>
+                <h2>Common HTML Elements</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Purpose</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;h1&gt; - &lt;h6&gt;</code></td>
+                            <td>Headings (largest to smallest)</td>
+                            <td><code>&lt;h1&gt;Main Title&lt;/h1&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;p&gt;</code></td>
+                            <td>Paragraph</td>
+                            <td><code>&lt;p&gt;Text content&lt;/p&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;div&gt;</code></td>
+                            <td>Generic container</td>
+                            <td><code>&lt;div&gt;Content&lt;/div&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;span&gt;</code></td>
+                            <td>Inline container</td>
+                            <td><code>&lt;span&gt;Text&lt;/span&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;a&gt;</code></td>
+                            <td>Link</td>
+                            <td><code>&lt;a href="url"&gt;Link&lt;/a&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;img&gt;</code></td>
+                            <td>Image</td>
+                            <td><code>&lt;img src="image.jpg" alt="Description"&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;strong&gt;</code></td>
+                            <td>Important text (bold)</td>
+                            <td><code>&lt;strong&gt;Important&lt;/strong&gt;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;em&gt;</code></td>
+                            <td>Emphasized text (italic)</td>
+                            <td><code>&lt;em&gt;Emphasized&lt;/em&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Nesting Elements</h2>
+                <p>HTML elements can be nested inside other elements. Proper nesting is crucial for valid HTML.</p>
+                
+                <div class="example">
+                    <h3>✅ Correct Nesting</h3>
+                    <div class="code-example">
+                        &lt;div&gt;<br>
+                        &nbsp;&nbsp;&lt;h2&gt;Section Title&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;This paragraph contains &lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;<br>
+                        &lt;/div&gt;
+                    </div>
+                    
+                    <h3>❌ Incorrect Nesting</h3>
+                    <div class="code-example">
+                        &lt;p&gt;This is &lt;strong&gt;bold and &lt;em&gt;italic&lt;/strong&gt; text&lt;/em&gt;.&lt;/p&gt;
+                    </div>
+                    
+                    <div class="warning">
+                        <strong>Remember:</strong> Tags must be closed in the reverse order they were opened. Think of it like parentheses in math!
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Block vs Inline Elements</h2>
+                
+                <h3>Block Elements</h3>
+                <p>Take up the full width available and start on a new line.</p>
+                <div class="code-example">
+                    &lt;div&gt;Block element 1&lt;/div&gt;<br>
+                    &lt;div&gt;Block element 2&lt;/div&gt;<br>
+                    &lt;p&gt;Another block element&lt;/p&gt;
+                </div>
+                
+                <div class="result">
+                    <div style="background: #e9ecef; padding: 5px; margin: 2px 0;">Block element 1</div>
+                    <div style="background: #e9ecef; padding: 5px; margin: 2px 0;">Block element 2</div>
+                    <p style="background: #e9ecef; padding: 5px; margin: 2px 0;">Another block element</p>
+                </div>
+
+                <h3>Inline Elements</h3>
+                <p>Only take up as much width as necessary and don't start on a new line.</p>
+                <div class="code-example">
+                    &lt;span&gt;Inline 1&lt;/span&gt; &lt;span&gt;Inline 2&lt;/span&gt; &lt;strong&gt;Bold&lt;/strong&gt; &lt;em&gt;Italic&lt;/em&gt;
+                </div>
+                
+                <div class="result">
+                    <span style="background: #e9ecef; padding: 2px;">Inline 1</span> 
+                    <span style="background: #e9ecef; padding: 2px;">Inline 2</span> 
+                    <strong style="background: #e9ecef; padding: 2px;">Bold</strong> 
+                    <em style="background: #e9ecef; padding: 2px;">Italic</em>
+                </div>
+            </section>
+
+            <section>
+                <h2>HTML Comments</h2>
+                <p>Comments allow you to add notes in your HTML that won't be displayed to users.</p>
+                
+                <div class="code-example">
+                    &lt;!-- This is a comment --&gt;<br>
+                    &lt;p&gt;This paragraph is visible&lt;/p&gt;<br>
+                    &lt;!-- <br>
+                    &nbsp;&nbsp;This is a multi-line comment<br>
+                    &nbsp;&nbsp;that spans several lines<br>
+                    --&gt;
+                </div>
+                
+                <div class="warning">
+                    <strong>Use comments for:</strong>
+                    <ul>
+                        <li>Explaining complex code</li>
+                        <li>Temporarily disabling code</li>
+                        <li>Adding TODO notes</li>
+                        <li>Marking sections of your document</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./attributes.html">Learn about HTML Attributes</a></p>
+            <p><a href="./html-structure.html">← Previous: HTML Document Structure</a> | <a href="../README.md">Back to HTML Basics</a></p>
+        </footer>
+    </div>
+</body>
+</html>

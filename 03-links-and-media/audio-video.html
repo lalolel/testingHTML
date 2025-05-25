@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML5 audio and video elements">
+    <title>HTML Audio and Video | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .format-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .format-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        .media-demo {
+            border: 2px dashed #007bff;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .browser-support {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .browser {
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .supported { background: #d4edda; }
+        .partial { background: #fff3cd; }
+        .not-supported { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Audio and Video</h1>
+            <p><strong>Links and Media Lesson 3:</strong> Embedding multimedia content with HTML5</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML5 Media</h2>
+                <p>HTML5 introduced native <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements, eliminating the need for plugins like Flash. These elements provide built-in controls and extensive customization options.</p>
+                
+                <div class="tip">
+                    <h3>Benefits of HTML5 Media</h3>
+                    <ul>
+                        <li><strong>No plugins required</strong> - Works natively in browsers</li>
+                        <li><strong>Accessible</strong> - Better keyboard navigation and screen reader support</li>
+                        <li><strong>Mobile-friendly</strong> - Works on all devices</li>
+                        <li><strong>Customizable</strong> - Full control over appearance and behavior</li>
+                        <li><strong>SEO-friendly</strong> - Search engines can index content</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>HTML Audio Element</h2>
+                <p>The <code>&lt;audio&gt;</code> element is used to embed sound content in documents.</p>
+                
+                <div class="example">
+                    <h3>Basic Audio Element</h3>
+                    <div class="code-example">&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;</div>
+                    
+                    <div class="result">
+                        <div class="media-demo">
+                            <p>🎵 Audio Player Demo</p>
+                            <p><em>In a real implementation, this would be a working audio player with controls.</em></p>
+                            <div style="background: #e9ecef; padding: 10px; border-radius: 4px; margin: 10px 0;">
+                                ⏯️ ⏮️ ⏭️ 🔊 ━━━━━━━━━━ 0:00 / 3:45
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Audio Attributes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>controls</code></td>
+                                <td>Shows playback controls</td>
+                                <td><code>&lt;audio controls&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>autoplay</code></td>
+                                <td>Starts playing automatically</td>
+                                <td><code>&lt;audio autoplay&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>loop</code></td>
+                                <td>Repeats the audio</td>
+                                <td><code>&lt;audio loop&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>muted</code></td>
+                                <td>Starts muted</td>
+                                <td><code>&lt;audio muted&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>preload</code></td>
+                                <td>How much to preload</td>
+                                <td><code>&lt;audio preload="metadata"&gt;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="example">
+                    <h3>Advanced Audio Example</h3>
+                    <div class="code-example">&lt;audio controls preload="metadata"&gt;
+    &lt;source src="podcast.mp3" type="audio/mpeg"&gt;
+    &lt;source src="podcast.ogg" type="audio/ogg"&gt;
+    &lt;source src="podcast.wav" type="audio/wav"&gt;
+    &lt;p&gt;
+        Your browser doesn't support HTML5 audio. 
+        &lt;a href="podcast.mp3"&gt;Download the audio file&lt;/a&gt;.
+    &lt;/p&gt;
+&lt;/audio&gt;</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>HTML Video Element</h2>
+                <p>The <code>&lt;video&gt;</code> element embeds video content in your web pages.</p>
+                
+                <div class="example">
+                    <h3>Basic Video Element</h3>
+                    <div class="code-example">&lt;video width="640" height="360" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</div>
+                    
+                    <div class="result">
+                        <div class="media-demo">
+                            <p>🎬 Video Player Demo</p>
+                            <div style="background: #000; color: white; padding: 60px 20px; border-radius: 4px; margin: 10px 0;">
+                                📹 Video Content Area<br>
+                                <small>(640x360 pixels)</small>
+                            </div>
+                            <div style="background: #e9ecef; padding: 10px; border-radius: 4px; margin: 10px 0;">
+                                ⏯️ ⏮️ ⏭️ 🔊 ━━━━━━━━━━ 0:00 / 15:32 ⚙️ 🔽
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Video with Poster Image</h3>
+                    <div class="code-example">&lt;video width="640" height="360" controls poster="video-thumbnail.jpg"&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    &lt;p&gt;Your browser doesn't support HTML5 video. &lt;a href="movie.mp4"&gt;Download the video&lt;/a&gt;.&lt;/p&gt;
+&lt;/video&gt;</div>
+                    
+                    <div class="result">
+                        <div class="media-demo">
+                            <div style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; border-radius: 4px; margin: 10px 0;">
+                                🖼️ Poster Image<br>
+                                <small>(Shown before video plays)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Media File Formats</h2>
+                
+                <h3>Audio Formats</h3>
+                <div class="format-grid">
+                    <div class="format-card">
+                        <h4>MP3 (.mp3)</h4>
+                        <p><strong>Best for:</strong> Music, podcasts</p>
+                        <p><strong>Pros:</strong> Universal support, good compression</p>
+                        <p><strong>Cons:</strong> Lossy compression</p>
+                    </div>
+                    <div class="format-card">
+                        <h4>OGG Vorbis (.ogg)</h4>
+                        <p><strong>Best for:</strong> Open-source projects</p>
+                        <p><strong>Pros:</strong> Open standard, good quality</p>
+                        <p><strong>Cons:</strong> Limited browser support</p>
+                    </div>
+                    <div class="format-card">
+                        <h4>WAV (.wav)</h4>
+                        <p><strong>Best for:</strong> High-quality audio</p>
+                        <p><strong>Pros:</strong> Lossless, high quality</p>
+                        <p><strong>Cons:</strong> Large file sizes</p>
+                    </div>
+                </div>
+
+                <h3>Video Formats</h3>
+                <div class="format-grid">
+                    <div class="format-card">
+                        <h4>MP4 (.mp4)</h4>
+                        <p><strong>Best for:</strong> General web use</p>
+                        <p><strong>Pros:</strong> Universal support, good quality</p>
+                        <p><strong>Cons:</strong> Proprietary codecs</p>
+                    </div>
+                    <div class="format-card">
+                        <h4>WebM (.webm)</h4>
+                        <p><strong>Best for:</strong> Modern browsers</p>
+                        <p><strong>Pros:</strong> Open standard, good compression</p>
+                        <p><strong>Cons:</strong> Not supported in Safari</p>
+                    </div>
+                    <div class="format-card">
+                        <h4>OGV (.ogv)</h4>
+                        <p><strong>Best for:</strong> Open-source projects</p>
+                        <p><strong>Pros:</strong> Open standard, free</p>
+                        <p><strong>Cons:</strong> Limited support</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Accessibility Features</h2>
+                
+                <div class="example">
+                    <h3>Video with Captions and Subtitles</h3>
+                    <div class="code-example">&lt;video width="640" height="360" controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    
+    &lt;!-- Captions for the hearing impaired --&gt;
+    &lt;track kind="captions" 
+           src="captions-en.vtt" 
+           srclang="en" 
+           label="English Captions"&gt;
+    
+    &lt;!-- Subtitles for different languages --&gt;
+    &lt;track kind="subtitles" 
+           src="subtitles-en.vtt" 
+           srclang="en" 
+           label="English" 
+           default&gt;
+    &lt;track kind="subtitles" 
+           src="subtitles-es.vtt" 
+           srclang="es" 
+           label="Español"&gt;
+    
+    &lt;!-- Audio descriptions --&gt;
+    &lt;track kind="descriptions" 
+           src="descriptions.vtt" 
+           srclang="en" 
+           label="Audio Descriptions"&gt;
+    
+    Your browser doesn't support HTML5 video.
+&lt;/video&gt;</div>
+                </div>
+
+                <div class="example">
+                    <h3>Track Element Types</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kind</th>
+                                <th>Purpose</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>subtitles</code></td>
+                                <td>Translation of dialogue</td>
+                                <td>Different languages</td>
+                            </tr>
+                            <tr>
+                                <td><code>captions</code></td>
+                                <td>Dialogue + sound effects</td>
+                                <td>Hearing impaired users</td>
+                            </tr>
+                            <tr>
+                                <td><code>descriptions</code></td>
+                                <td>Audio descriptions of visual content</td>
+                                <td>Visually impaired users</td>
+                            </tr>
+                            <tr>
+                                <td><code>chapters</code></td>
+                                <td>Navigation markers</td>
+                                <td>Long-form content</td>
+                            </tr>
+                            <tr>
+                                <td><code>metadata</code></td>
+                                <td>Additional information</td>
+                                <td>Scripts and data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Responsive Media</h2>
+                
+                <div class="example">
+                    <h3>Responsive Video</h3>
+                    <div class="code-example">&lt;style&gt;
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+&lt;/style&gt;
+
+&lt;div class="video-container"&gt;
+    &lt;video controls&gt;
+        &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;/video&gt;
+&lt;/div&gt;</div>
+                    
+                    <div class="result">
+                        <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #f8f9fa; border: 2px dashed #007bff; border-radius: 8px;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                                <p>📱💻🖥️ Responsive Video</p>
+                                <small>Scales to fit any screen size</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Simple Responsive Media</h3>
+                    <div class="code-example">&lt;style&gt;
+video, audio {
+    max-width: 100%;
+    height: auto;
+}
+&lt;/style&gt;
+
+&lt;video controls&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Browser Support and Fallbacks</h2>
+                
+                <div class="example">
+                    <h3>Multiple Source Formats</h3>
+                    <div class="code-example">&lt;video controls&gt;
+    &lt;!-- Try MP4 first (best compatibility) --&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    
+    &lt;!-- Fallback to WebM --&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    
+    &lt;!-- Fallback to OGV --&gt;
+    &lt;source src="movie.ogv" type="video/ogg"&gt;
+    
+    &lt;!-- Final fallback --&gt;
+    &lt;p&gt;
+        Your browser doesn't support HTML5 video. 
+        You can &lt;a href="movie.mp4"&gt;download the MP4 file&lt;/a&gt; instead.
+    &lt;/p&gt;
+&lt;/video&gt;</div>
+                </div>
+
+                <div class="browser-support">
+                    <div class="browser supported">
+                        <strong>Chrome</strong><br>
+                        ✅ Full Support
+                    </div>
+                    <div class="browser supported">
+                        <strong>Firefox</strong><br>
+                        ✅ Full Support
+                    </div>
+                    <div class="browser supported">
+                        <strong>Safari</strong><br>
+                        ✅ MP4/MP3 Only
+                    </div>
+                    <div class="browser supported">
+                        <strong>Edge</strong><br>
+                        ✅ Full Support
+                    </div>
+                    <div class="browser partial">
+                        <strong>IE 11</strong><br>
+                        ⚠️ Limited Support
+                    </div>
+                    <div class="browser supported">
+                        <strong>Mobile</strong><br>
+                        ✅ Good Support
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Advanced Media Features</h2>
+                
+                <div class="example">
+                    <h3>Custom Controls with JavaScript</h3>
+                    <div class="code-example">&lt;video id="myVideo" width="640" height="360"&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;div class="custom-controls"&gt;
+    &lt;button onclick="playPause()"&gt;Play/Pause&lt;/button&gt;
+    &lt;button onclick="skip(-10)"&gt;-10s&lt;/button&gt;
+    &lt;button onclick="skip(10)"&gt;+10s&lt;/button&gt;
+    &lt;input type="range" id="volume" min="0" max="1" step="0.1" value="1"&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function playPause() {
+    const video = document.getElementById('myVideo');
+    if (video.paused) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
+function skip(seconds) {
+    const video = document.getElementById('myVideo');
+    video.currentTime += seconds;
+}
+&lt;/script&gt;</div>
+                </div>
+
+                <div class="example">
+                    <h3>Picture-in-Picture</h3>
+                    <div class="code-example">&lt;video controls id="pipVideo"&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;button onclick="togglePiP()"&gt;Toggle Picture-in-Picture&lt;/button&gt;
+
+&lt;script&gt;
+async function togglePiP() {
+    const video = document.getElementById('pipVideo');
+    
+    if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture();
+    } else {
+        await video.requestPictureInPicture();
+    }
+}
+&lt;/script&gt;</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Performance Optimization</h2>
+                
+                <div class="tip">
+                    <h3>Media Performance Tips</h3>
+                    <ul>
+                        <li><strong>Use appropriate preload settings</strong> - Don't preload unnecessary content</li>
+                        <li><strong>Compress media files</strong> - Balance quality with file size</li>
+                        <li><strong>Choose the right format</strong> - MP4 for compatibility, WebM for size</li>
+                        <li><strong>Provide multiple resolutions</strong> - Let users choose quality</li>
+                        <li><strong>Use a CDN</strong> - Distribute media files globally</li>
+                        <li><strong>Consider lazy loading</strong> - Load media only when needed</li>
+                    </ul>
+                </div>
+
+                <div class="example">
+                    <h3>Preload Options</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Value</th>
+                                <th>Behavior</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>none</code></td>
+                                <td>No preloading</td>
+                                <td>Save bandwidth</td>
+                            </tr>
+                            <tr>
+                                <td><code>metadata</code></td>
+                                <td>Load duration, dimensions only</td>
+                                <td>Show basic info (default)</td>
+                            </tr>
+                            <tr>
+                                <td><code>auto</code></td>
+                                <td>Load entire file</td>
+                                <td>Media likely to be played</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Media Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Avoid These Media Mistakes</h3>
+                    <ul>
+                        <li><strong>Autoplay with sound</strong> - Most browsers block this for UX</li>
+                        <li><strong>No fallback content</strong> - Always provide alternatives</li>
+                        <li><strong>Missing accessibility features</strong> - Include captions and descriptions</li>
+                        <li><strong>Huge file sizes</strong> - Compress media appropriately</li>
+                        <li><strong>Single format only</strong> - Provide multiple formats for compatibility</li>
+                        <li><strong>Not testing on mobile</strong> - Media experience varies on devices</li>
+                        <li><strong>Copyright violations</strong> - Only use media you have rights to</li>
+                        <li><strong>Poor mobile experience</strong> - Ensure controls are touch-friendly</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Best Practices Summary</h2>
+                
+                <div class="tip">
+                    <h3>✅ Media Best Practices</h3>
+                    <ul>
+                        <li><strong>Always include fallback content</strong> for unsupported browsers</li>
+                        <li><strong>Provide multiple formats</strong> for maximum compatibility</li>
+                        <li><strong>Include accessibility features</strong> like captions and transcripts</li>
+                        <li><strong>Optimize file sizes</strong> without sacrificing quality</li>
+                        <li><strong>Use appropriate preload settings</strong> based on content importance</li>
+                        <li><strong>Test across devices</strong> and browsers</li>
+                        <li><strong>Consider user experience</strong> - avoid autoplay with sound</li>
+                        <li><strong>Provide controls</strong> for user interaction</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="../04-tables/README.md">Learn about HTML Tables</a></p>
+            <p><a href="./images.html">← Previous: HTML Images</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

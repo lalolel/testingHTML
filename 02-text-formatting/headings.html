@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML headings and proper heading hierarchy">
+    <title>HTML Headings | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .outline {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .outline ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .outline li {
+            margin: 5px 0;
+        }
+        .heading-demo h1 { font-size: 2em; margin: 0.67em 0; }
+        .heading-demo h2 { font-size: 1.5em; margin: 0.75em 0; }
+        .heading-demo h3 { font-size: 1.17em; margin: 0.83em 0; }
+        .heading-demo h4 { font-size: 1em; margin: 1.12em 0; }
+        .heading-demo h5 { font-size: 0.83em; margin: 1.5em 0; }
+        .heading-demo h6 { font-size: 0.75em; margin: 1.67em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Headings</h1>
+            <p><strong>Text Formatting Lesson 1:</strong> Creating proper document structure with headings</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML Headings</h2>
+                <p>HTML provides six levels of headings, from <code>&lt;h1&gt;</code> (most important) to <code>&lt;h6&gt;</code> (least important). Headings create a hierarchical structure that helps both users and search engines understand your content organization.</p>
+            </section>
+
+            <section>
+                <h2>The Six Heading Levels</h2>
+                
+                <div class="code-example">
+&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;h2&gt;Major Section&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;
+&lt;h4&gt;Sub-subsection&lt;/h4&gt;
+&lt;h5&gt;Minor Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+                </div>
+                
+                <div class="result heading-demo">
+                    <h1>Main Page Title</h1>
+                    <h2>Major Section</h2>
+                    <h3>Subsection</h3>
+                    <h4>Sub-subsection</h4>
+                    <h5>Minor Heading</h5>
+                    <h6>Smallest Heading</h6>
+                </div>
+            </section>
+
+            <section>
+                <h2>Proper Heading Hierarchy</h2>
+                
+                <div class="tip">
+                    <h3>✅ Good Heading Structure</h3>
+                    <ul>
+                        <li>Start with <code>&lt;h1&gt;</code> for the main page title</li>
+                        <li>Use <code>&lt;h2&gt;</code> for major sections</li>
+                        <li>Use <code>&lt;h3&gt;</code> for subsections under <code>&lt;h2&gt;</code></li>
+                        <li>Don't skip heading levels</li>
+                        <li>Use headings for structure, not styling</li>
+                    </ul>
+                </div>
+
+                <div class="example">
+                    <h3>Example: Blog Post Structure</h3>
+                    <div class="code-example">
+&lt;h1&gt;How to Learn HTML&lt;/h1&gt;
+
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Introduction content...&lt;/p&gt;
+
+&lt;h3&gt;Setting Up Your Environment&lt;/h3&gt;
+&lt;p&gt;Environment setup content...&lt;/p&gt;
+
+&lt;h3&gt;Your First HTML File&lt;/h3&gt;
+&lt;p&gt;First file content...&lt;/p&gt;
+
+&lt;h2&gt;Advanced Concepts&lt;/h2&gt;
+&lt;p&gt;Advanced content...&lt;/p&gt;
+
+&lt;h3&gt;Semantic HTML&lt;/h3&gt;
+&lt;p&gt;Semantic content...&lt;/p&gt;
+
+&lt;h4&gt;Article Elements&lt;/h4&gt;
+&lt;p&gt;Article element details...&lt;/p&gt;
+
+&lt;h4&gt;Section Elements&lt;/h4&gt;
+&lt;p&gt;Section element details...&lt;/p&gt;
+                    </div>
+                    
+                    <div class="outline">
+                        <h4>Document Outline:</h4>
+                        <ul>
+                            <li>📄 How to Learn HTML (h1)
+                                <ul>
+                                    <li>📁 Getting Started (h2)
+                                        <ul>
+                                            <li>📝 Setting Up Your Environment (h3)</li>
+                                            <li>📝 Your First HTML File (h3)</li>
+                                        </ul>
+                                    </li>
+                                    <li>📁 Advanced Concepts (h2)
+                                        <ul>
+                                            <li>📝 Semantic HTML (h3)
+                                                <ul>
+                                                    <li>📄 Article Elements (h4)</li>
+                                                    <li>📄 Section Elements (h4)</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Heading Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Avoid These Mistakes</h3>
+                    
+                    <h4>1. Skipping Heading Levels</h4>
+                    <div class="code-example">
+&lt;!-- DON'T DO THIS --&gt;
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h3&gt;Skipped h2 - BAD!&lt;/h3&gt;
+&lt;h5&gt;Skipped h4 - VERY BAD!&lt;/h5&gt;
+                    </div>
+                    
+                    <h4>2. Using Headings for Styling</h4>
+                    <div class="code-example">
+&lt;!-- DON'T DO THIS --&gt;
+&lt;h3&gt;This text isn't a heading, I just want it bigger&lt;/h3&gt;
+&lt;p&gt;Regular paragraph text&lt;/p&gt;
+
+&lt;!-- DO THIS INSTEAD --&gt;
+&lt;p style="font-size: 1.2em; font-weight: bold;"&gt;Emphasized text&lt;/p&gt;
+&lt;p&gt;Regular paragraph text&lt;/p&gt;
+                    </div>
+                    
+                    <h4>3. Multiple H1 Elements</h4>
+                    <div class="code-example">
+&lt;!-- AVOID THIS --&gt;
+&lt;h1&gt;Welcome to My Site&lt;/h1&gt;
+&lt;h1&gt;About Me&lt;/h1&gt;  &lt;!-- Should be h2 --&gt;
+&lt;h1&gt;Contact&lt;/h1&gt;    &lt;!-- Should be h2 --&gt;
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>SEO and Accessibility Benefits</h2>
+                
+                <div class="tip">
+                    <h3>Why Proper Headings Matter</h3>
+                    
+                    <h4>🔍 Search Engine Optimization (SEO)</h4>
+                    <ul>
+                        <li>Search engines use headings to understand content structure</li>
+                        <li>H1 tags carry more weight for keyword relevance</li>
+                        <li>Proper hierarchy helps search engines index your content</li>
+                        <li>Well-structured headings improve search result snippets</li>
+                    </ul>
+                    
+                    <h4>♿ Accessibility</h4>
+                    <ul>
+                        <li>Screen readers use headings to navigate content</li>
+                        <li>Users can jump between sections using heading shortcuts</li>
+                        <li>Proper hierarchy creates a logical reading order</li>
+                        <li>Assistive technologies build content outlines from headings</li>
+                    </ul>
+                    
+                    <h4>👥 User Experience</h4>
+                    <ul>
+                        <li>Clear headings help users scan content quickly</li>
+                        <li>Logical structure improves content comprehension</li>
+                        <li>Consistent hierarchy sets user expectations</li>
+                        <li>Good headings work as content anchors for linking</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Best Practices Summary</h2>
+                
+                <div class="example">
+                    <h3>✅ Heading Best Practices</h3>
+                    <ol>
+                        <li><strong>Use only one H1 per page</strong> - Usually the main page title</li>
+                        <li><strong>Don't skip levels</strong> - Go h1 → h2 → h3, not h1 → h3</li>
+                        <li><strong>Use headings for structure</strong> - Not for visual styling</li>
+                        <li><strong>Keep headings descriptive</strong> - They should summarize the section</li>
+                        <li><strong>Make headings concise</strong> - Aim for clear, brief descriptions</li>
+                        <li><strong>Use CSS for styling</strong> - Don't choose heading levels based on appearance</li>
+                        <li><strong>Consider your audience</strong> - Use language they'll understand</li>
+                        <li><strong>Test with screen readers</strong> - Ensure logical navigation flow</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h2>Interactive Example: Page Structure</h2>
+                
+                <div class="result">
+                    <h1 style="color: #2c3e50; border-bottom: 2px solid #3498db;">Complete Guide to Web Development</h1>
+                    
+                    <h2 style="color: #34495e;">Frontend Development</h2>
+                    <p>Frontend development focuses on the user interface...</p>
+                    
+                    <h3 style="color: #7f8c8d;">HTML Fundamentals</h3>
+                    <p>HTML provides the structure for web pages...</p>
+                    
+                    <h4 style="color: #95a5a6;">Basic Elements</h4>
+                    <p>Understanding basic HTML elements is crucial...</p>
+                    
+                    <h4 style="color: #95a5a6;">Semantic Markup</h4>
+                    <p>Semantic HTML improves accessibility and SEO...</p>
+                    
+                    <h3 style="color: #7f8c8d;">CSS Styling</h3>
+                    <p>CSS controls the appearance of HTML elements...</p>
+                    
+                    <h2 style="color: #34495e;">Backend Development</h2>
+                    <p>Backend development handles server-side logic...</p>
+                    
+                    <h3 style="color: #7f8c8d;">Server Technologies</h3>
+                    <p>Various technologies power backend systems...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./paragraphs-and-text.html">Learn about Paragraphs and Text Formatting</a></p>
+            <p><a href="../01-basics/attributes.html">← Previous: HTML Attributes</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

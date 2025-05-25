@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML images, optimization, and accessibility">
+    <title>HTML Images | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .format-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .format-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .responsive-demo {
+            max-width: 100%;
+            height: auto;
+            border: 2px dashed #007bff;
+            padding: 10px;
+        }
+        .figure-demo {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Images</h1>
+            <p><strong>Links and Media Lesson 2:</strong> Embedding and optimizing images in web pages</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML Images</h2>
+                <p>Images are crucial for modern web design, enhancing user experience and communication. The <code>&lt;img&gt;</code> element is used to embed images in HTML documents.</p>
+                
+                <div class="example">
+                    <h3>Basic Image Syntax</h3>
+                    <div class="code-example">&lt;img src="image-path" alt="description" width="300" height="200"&gt;</div>
+                    <ul>
+                        <li><strong>src</strong> - Path to the image file (required)</li>
+                        <li><strong>alt</strong> - Alternative text description (required for accessibility)</li>
+                        <li><strong>width/height</strong> - Dimensions in pixels (optional but recommended)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Essential Image Attributes</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Purpose</th>
+                            <th>Required</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>src</code></td>
+                            <td>Specifies image source path</td>
+                            <td>Yes</td>
+                            <td><code>src="images/photo.jpg"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>alt</code></td>
+                            <td>Alternative text for accessibility</td>
+                            <td>Yes</td>
+                            <td><code>alt="Sunset over mountains"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>width</code></td>
+                            <td>Width in pixels</td>
+                            <td>No</td>
+                            <td><code>width="300"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>height</code></td>
+                            <td>Height in pixels</td>
+                            <td>No</td>
+                            <td><code>height="200"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>Tooltip text on hover</td>
+                            <td>No</td>
+                            <td><code>title="Beautiful sunset view"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>loading</code></td>
+                            <td>Lazy loading behavior</td>
+                            <td>No</td>
+                            <td><code>loading="lazy"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Image File Formats</h2>
+                
+                <div class="format-comparison">
+                    <div class="format-card" style="background: #e3f2fd;">
+                        <h4>JPEG (.jpg/.jpeg)</h4>
+                        <p><strong>Best for:</strong> Photos, complex images</p>
+                        <p><strong>Pros:</strong> Small file size, good compression</p>
+                        <p><strong>Cons:</strong> Lossy compression, no transparency</p>
+                    </div>
+                    <div class="format-card" style="background: #f3e5f5;">
+                        <h4>PNG (.png)</h4>
+                        <p><strong>Best for:</strong> Graphics, logos, transparency</p>
+                        <p><strong>Pros:</strong> Lossless, supports transparency</p>
+                        <p><strong>Cons:</strong> Larger file sizes</p>
+                    </div>
+                    <div class="format-card" style="background: #e8f5e8;">
+                        <h4>SVG (.svg)</h4>
+                        <p><strong>Best for:</strong> Icons, simple graphics</p>
+                        <p><strong>Pros:</strong> Scalable, small size, editable</p>
+                        <p><strong>Cons:</strong> Not suitable for photos</p>
+                    </div>
+                    <div class="format-card" style="background: #fff3e0;">
+                        <h4>WebP (.webp)</h4>
+                        <p><strong>Best for:</strong> Modern web optimization</p>
+                        <p><strong>Pros:</strong> Superior compression, supports transparency</p>
+                        <p><strong>Cons:</strong> Limited browser support</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Basic Image Examples</h2>
+                
+                <div class="example">
+                    <h3>Simple Image with Alt Text</h3>
+                    <div class="code-example">&lt;img src="https://via.placeholder.com/300x200/4CAF50/white?text=Sample+Image" 
+     alt="Green placeholder image with sample text" 
+     width="300" 
+     height="200"&gt;</div>
+                    
+                    <div class="result">
+                        <img src="https://via.placeholder.com/300x200/4CAF50/white?text=Sample+Image" 
+                             alt="Green placeholder image with sample text" 
+                             width="300" 
+                             height="200">
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Image with Title (Tooltip)</h3>
+                    <div class="code-example">&lt;img src="https://via.placeholder.com/250x150/2196F3/white?text=Hover+Me" 
+     alt="Blue placeholder demonstrating tooltip functionality" 
+     title="This is a tooltip that appears on hover"
+     width="250" 
+     height="150"&gt;</div>
+                    
+                    <div class="result">
+                        <img src="https://via.placeholder.com/250x150/2196F3/white?text=Hover+Me" 
+                             alt="Blue placeholder demonstrating tooltip functionality" 
+                             title="This is a tooltip that appears on hover"
+                             width="250" 
+                             height="150">
+                        <p><em>Hover over the image to see the tooltip!</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Responsive Images</h2>
+                <p>Responsive images adapt to different screen sizes and resolutions, improving performance and user experience.</p>
+                
+                <div class="example">
+                    <h3>CSS Responsive Image</h3>
+                    <div class="code-example">&lt;style&gt;
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+&lt;/style&gt;
+
+&lt;img src="large-image.jpg" 
+     alt="Responsive image example" 
+     class="responsive-img"&gt;</div>
+                    
+                    <div class="result">
+                        <img src="https://via.placeholder.com/600x300/FF9800/white?text=Responsive+Image" 
+                             alt="Orange responsive placeholder image" 
+                             class="responsive-demo">
+                        <p><em>This image scales with the container width</em></p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Srcset for Different Resolutions</h3>
+                    <div class="code-example">&lt;img src="image-400.jpg"
+     srcset="image-400.jpg 400w,
+             image-800.jpg 800w,
+             image-1200.jpg 1200w"
+     sizes="(max-width: 600px) 400px,
+            (max-width: 1000px) 800px,
+            1200px"
+     alt="High-resolution image with multiple sources"&gt;</div>
+                    
+                    <div class="result">
+                        <img src="https://via.placeholder.com/400x200/9C27B0/white?text=400w"
+                             srcset="https://via.placeholder.com/400x200/9C27B0/white?text=400w 400w,
+                                     https://via.placeholder.com/800x400/9C27B0/white?text=800w 800w,
+                                     https://via.placeholder.com/1200x600/9C27B0/white?text=1200w 1200w"
+                             sizes="(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"
+                             alt="Purple placeholder showing responsive srcset"
+                             style="max-width: 100%; height: auto;">
+                        <p><em>Browser chooses the best image size based on screen resolution</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Figure and Figcaption Elements</h2>
+                <p>Use <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> to semantically group images with their captions.</p>
+                
+                <div class="example">
+                    <h3>Image with Caption</h3>
+                    <div class="code-example">&lt;figure&gt;
+    &lt;img src="chart.png" 
+         alt="Bar chart showing quarterly sales data"
+         width="400" 
+         height="300"&gt;
+    &lt;figcaption&gt;
+        Figure 1: Quarterly sales performance for 2023
+    &lt;/figcaption&gt;
+&lt;/figure&gt;</div>
+                    
+                    <div class="result">
+                        <figure class="figure-demo">
+                            <img src="https://via.placeholder.com/400x300/607D8B/white?text=Sales+Chart" 
+                                 alt="Bar chart showing quarterly sales data"
+                                 width="400" 
+                                 height="300"
+                                 style="max-width: 100%; height: auto;">
+                            <figcaption style="margin-top: 10px; font-style: italic; color: #666;">
+                                Figure 1: Quarterly sales performance for 2023
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Multiple Images in Figure</h3>
+                    <div class="code-example">&lt;figure&gt;
+    &lt;img src="before.jpg" alt="Garden before renovation" width="200"&gt;
+    &lt;img src="after.jpg" alt="Garden after renovation" width="200"&gt;
+    &lt;figcaption&gt;Before and after garden renovation&lt;/figcaption&gt;
+&lt;/figure&gt;</div>
+                    
+                    <div class="result">
+                        <figure class="figure-demo">
+                            <img src="https://via.placeholder.com/200x150/795548/white?text=Before" 
+                                 alt="Garden before renovation" 
+                                 width="200" 
+                                 style="margin: 0 10px;">
+                            <img src="https://via.placeholder.com/200x150/4CAF50/white?text=After" 
+                                 alt="Garden after renovation" 
+                                 width="200" 
+                                 style="margin: 0 10px;">
+                            <figcaption style="margin-top: 10px; font-style: italic; color: #666;">
+                                Before and after garden renovation
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Image Accessibility</h2>
+                
+                <div class="tip">
+                    <h3>✅ Alt Text Best Practices</h3>
+                    <ul>
+                        <li><strong>Describe the content</strong> - What does the image show?</li>
+                        <li><strong>Consider context</strong> - How does it relate to surrounding content?</li>
+                        <li><strong>Be concise</strong> - Aim for 125 characters or less</li>
+                        <li><strong>Avoid redundancy</strong> - Don't repeat nearby text</li>
+                        <li><strong>Skip "image of" or "picture of"</strong> - Screen readers announce it's an image</li>
+                        <li><strong>Use empty alt for decorative images</strong> - <code>alt=""</code></li>
+                    </ul>
+                </div>
+
+                <div class="example">
+                    <h3>Good vs Poor Alt Text Examples</h3>
+                    <div class="code-example">&lt;!-- ❌ Poor alt text --&gt;
+&lt;img src="dog.jpg" alt="dog"&gt;
+&lt;img src="chart.png" alt="image"&gt;
+&lt;img src="logo.png" alt="picture of company logo"&gt;
+
+&lt;!-- ✅ Good alt text --&gt;
+&lt;img src="dog.jpg" alt="Golden retriever playing fetch in a park"&gt;
+&lt;img src="chart.png" alt="Sales increased 40% from Q1 to Q2 2023"&gt;
+&lt;img src="logo.png" alt="TechCorp Solutions"&gt;
+
+&lt;!-- ✅ Decorative image (empty alt) --&gt;
+&lt;img src="decorative-border.png" alt=""&gt;</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Performance Optimization</h2>
+                
+                <div class="example">
+                    <h3>Lazy Loading</h3>
+                    <div class="code-example">&lt;!-- Images load only when needed --&gt;
+&lt;img src="image1.jpg" 
+     alt="Description" 
+     loading="lazy"&gt;
+
+&lt;img src="image2.jpg" 
+     alt="Description" 
+     loading="lazy"&gt;
+
+&lt;!-- Critical images (above the fold) --&gt;
+&lt;img src="hero-image.jpg" 
+     alt="Description" 
+     loading="eager"&gt;</div>
+                    
+                    <div class="result">
+                        <img src="https://via.placeholder.com/300x200/E91E63/white?text=Lazy+Loading" 
+                             alt="Pink placeholder demonstrating lazy loading" 
+                             loading="lazy"
+                             width="300" 
+                             height="200">
+                        <p><em>This image uses lazy loading to improve page performance</em></p>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    <h3>Image Optimization Tips</h3>
+                    <ul>
+                        <li><strong>Choose the right format</strong> - JPEG for photos, PNG for graphics</li>
+                        <li><strong>Compress images</strong> - Use tools like TinyPNG or ImageOptim</li>
+                        <li><strong>Specify dimensions</strong> - Prevents layout shift during loading</li>
+                        <li><strong>Use lazy loading</strong> - For images below the fold</li>
+                        <li><strong>Consider WebP</strong> - Modern format with better compression</li>
+                        <li><strong>Optimize for mobile</strong> - Use responsive techniques</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Advanced Image Techniques</h2>
+                
+                <div class="example">
+                    <h3>Picture Element for Art Direction</h3>
+                    <div class="code-example">&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" 
+            srcset="mobile-image.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" 
+            srcset="tablet-image.jpg"&gt;
+    &lt;img src="desktop-image.jpg" 
+         alt="Responsive image with art direction"&gt;
+&lt;/picture&gt;</div>
+                    
+                    <div class="result">
+                        <picture>
+                            <source media="(max-width: 600px)" 
+                                    srcset="https://via.placeholder.com/300x400/FF5722/white?text=Mobile">
+                            <source media="(max-width: 1200px)" 
+                                    srcset="https://via.placeholder.com/600x300/FF9800/white?text=Tablet">
+                            <img src="https://via.placeholder.com/800x200/FFC107/black?text=Desktop" 
+                                 alt="Responsive image showing different layouts for different devices"
+                                 style="max-width: 100%; height: auto;">
+                        </picture>
+                        <p><em>Resize your browser to see different images for different screen sizes</em></p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Image Gallery</h3>
+                    <div class="code-example">&lt;div class="gallery"&gt;
+    &lt;img src="photo1.jpg" alt="Beach sunset"&gt;
+    &lt;img src="photo2.jpg" alt="Mountain landscape"&gt;
+    &lt;img src="photo3.jpg" alt="City skyline"&gt;
+    &lt;img src="photo4.jpg" alt="Forest path"&gt;
+&lt;/div&gt;</div>
+                    
+                    <div class="result">
+                        <div class="gallery">
+                            <img src="https://via.placeholder.com/200x150/FF6B6B/white?text=Beach" alt="Beach sunset">
+                            <img src="https://via.placeholder.com/200x150/4ECDC4/white?text=Mountain" alt="Mountain landscape">
+                            <img src="https://via.placeholder.com/200x150/45B7D1/white?text=City" alt="City skyline">
+                            <img src="https://via.placeholder.com/200x150/96CEB4/white?text=Forest" alt="Forest path">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Image Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Avoid These Image Mistakes</h3>
+                    <ul>
+                        <li><strong>Missing alt attributes</strong> - Required for accessibility</li>
+                        <li><strong>Poor alt text</strong> - "image" or "photo" doesn't help users</li>
+                        <li><strong>Huge file sizes</strong> - Compress images for web use</li>
+                        <li><strong>Wrong file format</strong> - Choose format based on image type</li>
+                        <li><strong>No dimensions specified</strong> - Causes layout shift during loading</li>
+                        <li><strong>Not optimizing for mobile</strong> - Images should work on all devices</li>
+                        <li><strong>Copyright violations</strong> - Only use images you have rights to</li>
+                        <li><strong>Decorative images with alt text</strong> - Use empty alt for purely decorative images</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>SVG Images</h2>
+                <p>SVG (Scalable Vector Graphics) are perfect for icons, logos, and simple graphics that need to scale perfectly.</p>
+                
+                <div class="example">
+                    <h3>Inline SVG</h3>
+                    <div class="code-example">&lt;svg width="100" height="100" viewBox="0 0 100 100"&gt;
+    &lt;circle cx="50" cy="50" r="40" 
+            fill="#4CAF50" stroke="#333" stroke-width="2"/&gt;
+    &lt;text x="50" y="55" text-anchor="middle" 
+          font-family="Arial" font-size="14" fill="white"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;</div>
+                    
+                    <div class="result">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" 
+                                    fill="#4CAF50" stroke="#333" stroke-width="2"/>
+                            <text x="50" y="55" text-anchor="middle" 
+                                  font-family="Arial" font-size="14" fill="white">SVG</text>
+                        </svg>
+                        <p><em>This SVG scales perfectly at any size</em></p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>External SVG File</h3>
+                    <div class="code-example">&lt;img src="icon.svg" 
+     alt="Search icon" 
+     width="24" 
+     height="24"&gt;</div>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./audio-video.html">Learn about Audio and Video</a></p>
+            <p><a href="./links.html">← Previous: HTML Links</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

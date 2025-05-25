@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information about the document -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the basic structure of an HTML document">
+    <title>HTML Document Structure | HTML Learning</title>
+    
+    <!-- Basic styling for better presentation -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- This is the visible content of the webpage -->
+    <div class="container">
+        <header>
+            <h1>HTML Document Structure</h1>
+            <p><strong>Lesson 1:</strong> Understanding the anatomy of an HTML document</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2>1. The DOCTYPE Declaration</h2>
+                <p>Every HTML document must start with a DOCTYPE declaration:</p>
+                <code>&lt;!DOCTYPE html&gt;</code>
+                <div class="highlight">
+                    <strong>Why it's important:</strong> The DOCTYPE tells the browser which version of HTML you're using and ensures the page renders correctly.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>2. The HTML Element</h2>
+                <p>The <code>&lt;html&gt;</code> element is the root element that contains all other elements:</p>
+                <code>&lt;html lang="en"&gt;</code>
+                <ul>
+                    <li>The <code>lang</code> attribute specifies the language of the document</li>
+                    <li>This helps screen readers and search engines</li>
+                    <li>Common values: "en" (English), "es" (Spanish), "fr" (French)</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>3. The Head Section</h2>
+                <p>The <code>&lt;head&gt;</code> contains metadata about the document:</p>
+                <ul>
+                    <li><strong>Meta charset:</strong> Defines character encoding (UTF-8 is standard)</li>
+                    <li><strong>Viewport:</strong> Controls how the page is displayed on mobile devices</li>
+                    <li><strong>Title:</strong> Appears in browser tab and search results</li>
+                    <li><strong>Description:</strong> Used by search engines</li>
+                    <li><strong>CSS and JavaScript:</strong> Links to external files or embedded code</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>4. The Body Section</h2>
+                <p>The <code>&lt;body&gt;</code> contains all visible content:</p>
+                <ul>
+                    <li>Text content</li>
+                    <li>Images and media</li>
+                    <li>Interactive elements</li>
+                    <li>Navigation and structure</li>
+                </ul>
+                <div class="highlight">
+                    <strong>Remember:</strong> Everything users see and interact with goes in the body!
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>5. Complete Structure Overview</h2>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Visible content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Next:</strong> <a href="./elements-and-tags.html">Learn about HTML Elements and Tags</a></p>
+            <p><a href="../README.md">← Back to HTML Basics</a></p>
+        </footer>
+    </div>
+</body>
+</html>

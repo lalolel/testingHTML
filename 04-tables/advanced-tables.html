@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn advanced HTML table features and techniques">
+    <title>Advanced HTML Tables | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        /* Advanced table styling */
+        .advanced-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .advanced-table th,
+        .advanced-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .advanced-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+        .advanced-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .advanced-table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        .advanced-table tfoot {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+        
+        /* Spanning examples */
+        .span-demo {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .span-demo th,
+        .span-demo td {
+            border: 2px solid #007bff;
+            padding: 15px;
+            text-align: center;
+        }
+        .span-demo th {
+            background-color: #007bff;
+            color: white;
+        }
+        .span-demo .highlight {
+            background-color: #fff3cd;
+            font-weight: bold;
+        }
+        
+        /* Responsive table */
+        .responsive-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .responsive-table {
+            min-width: 600px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .responsive-table th,
+        .responsive-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            white-space: nowrap;
+        }
+        .responsive-table th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+        
+        /* Mobile-first responsive table */
+        @media (max-width: 768px) {
+            .mobile-table {
+                border: 0;
+            }
+            .mobile-table caption {
+                font-size: 1.3em;
+            }
+            .mobile-table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+            .mobile-table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: 0.625em;
+            }
+            .mobile-table td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                display: block;
+                font-size: 0.8em;
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            .mobile-table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 6px;
+                width: 45%;
+                text-align: left;
+                font-weight: bold;
+            }
+        }
+        
+        .sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+        .sortable:hover {
+            background-color: #e9ecef;
+        }
+        .sortable:after {
+            content: " ↕";
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced HTML Tables</h1>
+            <p><strong>Tables Lesson 2:</strong> Complex table structures and advanced features</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Table Sections: thead, tbody, tfoot</h2>
+                <p>Organize large tables with semantic sections for better structure and styling control.</p>
+                
+                <div class="example">
+                    <h3>Complete Table with All Sections</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;caption&gt;Quarterly Financial Report&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Quarter&lt;/th&gt;
+            &lt;th scope="col"&gt;Revenue&lt;/th&gt;
+            &lt;th scope="col"&gt;Expenses&lt;/th&gt;
+            &lt;th scope="col"&gt;Profit&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Q1 2023&lt;/th&gt;
+            &lt;td&gt;$250,000&lt;/td&gt;
+            &lt;td&gt;$180,000&lt;/td&gt;
+            &lt;td&gt;$70,000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Q2 2023&lt;/th&gt;
+            &lt;td&gt;$280,000&lt;/td&gt;
+            &lt;td&gt;$200,000&lt;/td&gt;
+            &lt;td&gt;$80,000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Q3 2023&lt;/th&gt;
+            &lt;td&gt;$320,000&lt;/td&gt;
+            &lt;td&gt;$220,000&lt;/td&gt;
+            &lt;td&gt;$100,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Total&lt;/th&gt;
+            &lt;td&gt;$850,000&lt;/td&gt;
+            &lt;td&gt;$600,000&lt;/td&gt;
+            &lt;td&gt;$250,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="advanced-table">
+                            <caption style="font-weight: bold; margin-bottom: 10px; color: #333;">Quarterly Financial Report</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Quarter</th>
+                                    <th scope="col">Revenue</th>
+                                    <th scope="col">Expenses</th>
+                                    <th scope="col">Profit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Q1 2023</th>
+                                    <td>$250,000</td>
+                                    <td>$180,000</td>
+                                    <td style="color: #28a745;">$70,000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Q2 2023</th>
+                                    <td>$280,000</td>
+                                    <td>$200,000</td>
+                                    <td style="color: #28a745;">$80,000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Q3 2023</th>
+                                    <td>$320,000</td>
+                                    <td>$220,000</td>
+                                    <td style="color: #28a745;">$100,000</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td>$850,000</td>
+                                    <td>$600,000</td>
+                                    <td style="color: #28a745; font-weight: bold;">$250,000</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Column and Row Spanning</h2>
+                <p>Use <code>colspan</code> and <code>rowspan</code> attributes to create cells that span multiple columns or rows.</p>
+                
+                <div class="example">
+                    <h3>Column Spanning (colspan)</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th colspan="3"&gt;Sales Performance&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Q1&lt;/th&gt;
+            &lt;th&gt;Q2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laptops&lt;/td&gt;
+            &lt;td&gt;150&lt;/td&gt;
+            &lt;td&gt;180&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Tablets&lt;/td&gt;
+            &lt;td&gt;80&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="span-demo">
+                            <thead>
+                                <tr>
+                                    <th colspan="3" class="highlight">Sales Performance</th>
+                                </tr>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Q1</th>
+                                    <th>Q2</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Laptops</td>
+                                    <td>150</td>
+                                    <td>180</td>
+                                </tr>
+                                <tr>
+                                    <td>Tablets</td>
+                                    <td>80</td>
+                                    <td>95</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Row Spanning (rowspan)</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Department&lt;/th&gt;
+            &lt;th&gt;Employee&lt;/th&gt;
+            &lt;th&gt;Role&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="3"&gt;Engineering&lt;/td&gt;
+            &lt;td&gt;John Smith&lt;/td&gt;
+            &lt;td&gt;Senior Developer&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Sarah Johnson&lt;/td&gt;
+            &lt;td&gt;Frontend Developer&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mike Chen&lt;/td&gt;
+            &lt;td&gt;DevOps Engineer&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td rowspan="2"&gt;Marketing&lt;/td&gt;
+            &lt;td&gt;Emma Wilson&lt;/td&gt;
+            &lt;td&gt;Marketing Manager&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;David Brown&lt;/td&gt;
+            &lt;td&gt;Content Specialist&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="span-demo">
+                            <thead>
+                                <tr>
+                                    <th>Department</th>
+                                    <th>Employee</th>
+                                    <th>Role</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3" class="highlight" style="vertical-align: middle;">Engineering</td>
+                                    <td>John Smith</td>
+                                    <td>Senior Developer</td>
+                                </tr>
+                                <tr>
+                                    <td>Sarah Johnson</td>
+                                    <td>Frontend Developer</td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Chen</td>
+                                    <td>DevOps Engineer</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2" class="highlight" style="vertical-align: middle;">Marketing</td>
+                                    <td>Emma Wilson</td>
+                                    <td>Marketing Manager</td>
+                                </tr>
+                                <tr>
+                                    <td>David Brown</td>
+                                    <td>Content Specialist</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Complex Spanning Example</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th rowspan="2"&gt;Product&lt;/th&gt;
+            &lt;th colspan="2"&gt;Q1 2023&lt;/th&gt;
+            &lt;th colspan="2"&gt;Q2 2023&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Units&lt;/th&gt;
+            &lt;th&gt;Revenue&lt;/th&gt;
+            &lt;th&gt;Units&lt;/th&gt;
+            &lt;th&gt;Revenue&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Smartphones&lt;/td&gt;
+            &lt;td&gt;1,200&lt;/td&gt;
+            &lt;td&gt;$240,000&lt;/td&gt;
+            &lt;td&gt;1,350&lt;/td&gt;
+            &lt;td&gt;$270,000&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Tablets&lt;/td&gt;
+            &lt;td&gt;800&lt;/td&gt;
+            &lt;td&gt;$120,000&lt;/td&gt;
+            &lt;td&gt;950&lt;/td&gt;
+            &lt;td&gt;$142,500&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="span-demo">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" style="vertical-align: middle;">Product</th>
+                                    <th colspan="2" class="highlight">Q1 2023</th>
+                                    <th colspan="2" class="highlight">Q2 2023</th>
+                                </tr>
+                                <tr>
+                                    <th>Units</th>
+                                    <th>Revenue</th>
+                                    <th>Units</th>
+                                    <th>Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Smartphones</td>
+                                    <td>1,200</td>
+                                    <td>$240,000</td>
+                                    <td>1,350</td>
+                                    <td>$270,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Tablets</td>
+                                    <td>800</td>
+                                    <td>$120,000</td>
+                                    <td>950</td>
+                                    <td>$142,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Column Groups and Styling</h2>
+                <p>Use <code>&lt;colgroup&gt;</code> and <code>&lt;col&gt;</code> elements to apply styling to entire columns.</p>
+                
+                <div class="example">
+                    <h3>Column Group Styling</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;colgroup&gt;
+        &lt;col style="background-color: #f8f9fa;"&gt;
+        &lt;col span="2" style="background-color: #e3f2fd;"&gt;
+        &lt;col style="background-color: #f3e5f5;"&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Math&lt;/th&gt;
+            &lt;th&gt;Science&lt;/th&gt;
+            &lt;th&gt;English&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+            &lt;td&gt;88&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob&lt;/td&gt;
+            &lt;td&gt;87&lt;/td&gt;
+            &lt;td&gt;91&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table style="border-collapse: collapse; width: 100%;">
+                            <colgroup>
+                                <col style="background-color: #f8f9fa;">
+                                <col span="2" style="background-color: #e3f2fd;">
+                                <col style="background-color: #f3e5f5;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 12px;">Name</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px;">Math</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px;">Science</th>
+                                    <th style="border: 1px solid #ddd; padding: 12px;">English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Alice</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">95</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">88</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">92</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">Bob</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">87</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">91</td>
+                                    <td style="border: 1px solid #ddd; padding: 12px;">85</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Responsive Tables</h2>
+                <p>Make tables work well on different screen sizes using various techniques.</p>
+                
+                <div class="example">
+                    <h3>Horizontal Scrolling</h3>
+                    <div class="code-example">&lt;div class="table-wrapper"&gt;
+    &lt;table&gt;
+        &lt;!-- Wide table content --&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    min-width: 600px;
+}
+&lt;/style&gt;</div>
+                    
+                    <div class="result">
+                        <div class="responsive-wrapper">
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product ID</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Supplier</th>
+                                        <th>Last Updated</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>PRD001</td>
+                                        <td>Wireless Headphones</td>
+                                        <td>Electronics</td>
+                                        <td>$89.99</td>
+                                        <td>45</td>
+                                        <td>TechCorp</td>
+                                        <td>2023-12-15</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PRD002</td>
+                                        <td>Bluetooth Speaker</td>
+                                        <td>Electronics</td>
+                                        <td>$59.99</td>
+                                        <td>23</td>
+                                        <td>AudioMax</td>
+                                        <td>2023-12-14</td>
+                                        <td>Active</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p><em>Scroll horizontally to see all columns on narrow screens</em></p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Mobile-First Responsive Table</h3>
+                    <div class="code-example">&lt;table class="mobile-responsive"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Email&lt;/th&gt;
+            &lt;th&gt;Department&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td data-label="Name"&gt;John Doe&lt;/td&gt;
+            &lt;td data-label="Email"&gt;john@company.com&lt;/td&gt;
+            &lt;td data-label="Department"&gt;Engineering&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td data-label="Name"&gt;Jane Smith&lt;/td&gt;
+            &lt;td data-label="Email"&gt;jane@company.com&lt;/td&gt;
+            &lt;td data-label="Department"&gt;Marketing&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="mobile-table advanced-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Department</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Name">John Doe</td>
+                                    <td data-label="Email">john@company.com</td>
+                                    <td data-label="Department">Engineering</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Name">Jane Smith</td>
+                                    <td data-label="Email">jane@company.com</td>
+                                    <td data-label="Department">Marketing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><em>Resize your browser to see mobile layout (data-label attributes become visible)</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Accessible Complex Tables</h2>
+                <p>Advanced accessibility techniques for complex table structures.</p>
+                
+                <div class="example">
+                    <h3>Headers Association with IDs</h3>
+                    <div class="code-example">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th id="name"&gt;Student&lt;/th&gt;
+            &lt;th id="math" scope="col"&gt;Mathematics&lt;/th&gt;
+            &lt;th id="physics" scope="col"&gt;Physics&lt;/th&gt;
+            &lt;th id="chemistry" scope="col"&gt;Chemistry&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th id="student1" scope="row"&gt;Alice Johnson&lt;/th&gt;
+            &lt;td headers="student1 math"&gt;95&lt;/td&gt;
+            &lt;td headers="student1 physics"&gt;88&lt;/td&gt;
+            &lt;td headers="student1 chemistry"&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th id="student2" scope="row"&gt;Bob Smith&lt;/th&gt;
+            &lt;td headers="student2 math"&gt;87&lt;/td&gt;
+            &lt;td headers="student2 physics"&gt;91&lt;/td&gt;
+            &lt;td headers="student2 chemistry"&gt;85&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+                    
+                    <div class="result">
+                        <table class="advanced-table">
+                            <thead>
+                                <tr>
+                                    <th id="name-demo">Student</th>
+                                    <th id="math-demo" scope="col">Mathematics</th>
+                                    <th id="physics-demo" scope="col">Physics</th>
+                                    <th id="chemistry-demo" scope="col">Chemistry</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th id="student1-demo" scope="row">Alice Johnson</th>
+                                    <td headers="student1-demo math-demo">95</td>
+                                    <td headers="student1-demo physics-demo">88</td>
+                                    <td headers="student1-demo chemistry-demo">92</td>
+                                </tr>
+                                <tr>
+                                    <th id="student2-demo" scope="row">Bob Smith</th>
+                                    <td headers="student2-demo math-demo">87</td>
+                                    <td headers="student2-demo physics-demo">91</td>
+                                    <td headers="student2-demo chemistry-demo">85</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Interactive Table Features</h2>
+                
+                <div class="example">
+                    <h3>Sortable Table (JavaScript Enhancement)</h3>
+                    <div class="code-example">&lt;table id="sortableTable"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th class="sortable" onclick="sortTable(0)"&gt;Name&lt;/th&gt;
+            &lt;th class="sortable" onclick="sortTable(1)"&gt;Age&lt;/th&gt;
+            &lt;th class="sortable" onclick="sortTable(2)"&gt;Score&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Alice&lt;/td&gt;
+            &lt;td&gt;25&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Bob&lt;/td&gt;
+            &lt;td&gt;30&lt;/td&gt;
+            &lt;td&gt;87&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Charlie&lt;/td&gt;
+            &lt;td&gt;22&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+function sortTable(columnIndex) {
+    // JavaScript sorting logic here
+    console.log('Sorting column:', columnIndex);
+}
+&lt;/script&gt;</div>
+                    
+                    <div class="result">
+                        <table class="advanced-table">
+                            <thead>
+                                <tr>
+                                    <th class="sortable">Name ↕</th>
+                                    <th class="sortable">Age ↕</th>
+                                    <th class="sortable">Score ↕</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alice</td>
+                                    <td>25</td>
+                                    <td>95</td>
+                                </tr>
+                                <tr>
+                                    <td>Bob</td>
+                                    <td>30</td>
+                                    <td>87</td>
+                                </tr>
+                                <tr>
+                                    <td>Charlie</td>
+                                    <td>22</td>
+                                    <td>92</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><em>Click headers to sort (styling shows interactive state)</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Table Performance Considerations</h2>
+                
+                <div class="tip">
+                    <h3>Optimizing Large Tables</h3>
+                    <ul>
+                        <li><strong>Virtual scrolling</strong> - Only render visible rows for very large datasets</li>
+                        <li><strong>Pagination</strong> - Break large tables into smaller chunks</li>
+                        <li><strong>Lazy loading</strong> - Load table content as needed</li>
+                        <li><strong>CSS table-layout: fixed</strong> - Faster rendering for large tables</li>
+                        <li><strong>Minimize DOM complexity</strong> - Avoid unnecessary nested elements</li>
+                        <li><strong>Use appropriate data types</strong> - Numbers, dates, etc. for better sorting</li>
+                    </ul>
+                </div>
+
+                <div class="example">
+                    <h3>Fixed Layout Table</h3>
+                    <div class="code-example">&lt;style&gt;
+.fixed-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.fixed-table th:nth-child(1) { width: 30%; }
+.fixed-table th:nth-child(2) { width: 40%; }
+.fixed-table th:nth-child(3) { width: 30%; }
+&lt;/style&gt;
+
+&lt;table class="fixed-table"&gt;
+    &lt;!-- Table content --&gt;
+&lt;/table&gt;</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Advanced Table Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Advanced Table Pitfalls</h3>
+                    <ul>
+                        <li><strong>Overusing colspan/rowspan</strong> - Can break responsive designs</li>
+                        <li><strong>Missing accessibility attributes</strong> - Complex tables need proper headers association</li>
+                        <li><strong>Not testing on mobile</strong> - Responsive tables need thorough testing</li>
+                        <li><strong>Poor performance with large datasets</strong> - Consider pagination or virtual scrolling</li>
+                        <li><strong>Inconsistent column widths</strong> - Use CSS to control layout</li>
+                        <li><strong>Breaking keyboard navigation</strong> - Ensure all interactive elements are accessible</li>
+                        <li><strong>Not providing table summaries</strong> - Complex tables benefit from descriptions</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Advanced Table Best Practices</h2>
+                
+                <div class="tip">
+                    <h3>✅ Advanced Table Guidelines</h3>
+                    <ul>
+                        <li><strong>Use semantic HTML</strong> - Proper thead, tbody, tfoot structure</li>
+                        <li><strong>Provide clear headers</strong> - Use scope and headers attributes appropriately</li>
+                        <li><strong>Design for responsiveness</strong> - Consider mobile users from the start</li>
+                        <li><strong>Implement progressive enhancement</strong> - Basic table works, JavaScript adds features</li>
+                        <li><strong>Consider accessibility</strong> - Test with screen readers and keyboard navigation</li>
+                        <li><strong>Optimize for performance</strong> - Use appropriate techniques for large datasets</li>
+                        <li><strong>Provide data export options</strong> - Allow users to save table data</li>
+                        <li><strong>Use appropriate visual hierarchy</strong> - Make important data stand out</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="../05-forms/README.md">Learn about HTML Forms</a></p>
+            <p><a href="./basic-tables.html">← Previous: Basic Tables</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

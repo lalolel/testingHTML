@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the basics of HTML forms and form elements">
+    <title>Basic HTML Forms | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        /* Form styling */
+        .demo-form {
+            max-width: 500px;
+            margin: 20px 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .demo-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .demo-form input,
+        .demo-form textarea,
+        .demo-form select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .demo-form input:focus,
+        .demo-form textarea:focus,
+        .demo-form select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+        .demo-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .demo-form button:hover {
+            background-color: #0056b3;
+        }
+        .demo-form button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        
+        /* Inline form styling */
+        .inline-form {
+            display: flex;
+            gap: 10px;
+            align-items: end;
+            flex-wrap: wrap;
+        }
+        .inline-form .form-group {
+            margin-bottom: 0;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        /* Required field indicator */
+        .required {
+            color: #dc3545;
+        }
+        
+        /* Form element grid */
+        .element-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .element-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Basic HTML Forms</h1>
+            <p><strong>Forms Lesson 1:</strong> Creating interactive user input interfaces</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML Forms</h2>
+                <p>HTML forms are used to collect user input and send it to a server for processing. Forms are essential for user interaction, from simple contact forms to complex applications.</p>
+                
+                <div class="tip">
+                    <h3>Common Form Use Cases</h3>
+                    <ul>
+                        <li>✅ <strong>Contact forms</strong> - Getting messages from visitors</li>
+                        <li>✅ <strong>Registration</strong> - Creating user accounts</li>
+                        <li>✅ <strong>Login</strong> - User authentication</li>
+                        <li>✅ <strong>Surveys</strong> - Collecting feedback and data</li>
+                        <li>✅ <strong>E-commerce</strong> - Shopping carts and checkout</li>
+                        <li>✅ <strong>Search</strong> - Finding content on websites</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Basic Form Elements</h2>
+                
+                <div class="element-grid">
+                    <div class="element-card">
+                        <h4>&lt;form&gt;</h4>
+                        <p>Container for all form elements</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;input&gt;</h4>
+                        <p>Various input controls</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;label&gt;</h4>
+                        <p>Labels for form controls</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;textarea&gt;</h4>
+                        <p>Multi-line text input</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;select&gt;</h4>
+                        <p>Dropdown selection</p>
+                    </div>
+                    <div class="element-card">
+                        <h4>&lt;button&gt;</h4>
+                        <p>Form submission and actions</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Basic Form Structure</h2>
+                
+                <div class="example">
+                    <h3>Simple Contact Form</h3>
+                    <div class="code-example">&lt;form action="/submit-contact" method="post"&gt;
+    &lt;div class="form-group"&gt;
+        &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="email"&gt;Email Address:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="form-group"&gt;
+        &lt;label for="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea id="message" name="message" rows="5" required&gt;&lt;/textarea&gt;
+    &lt;/div&gt;
+    
+    &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;</div>
+                    
+                    <div class="result">
+                        <form class="demo-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="demo-name">Full Name: <span class="required">*</span></label>
+                                <input type="text" id="demo-name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-email">Email Address: <span class="required">*</span></label>
+                                <input type="email" id="demo-email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-message">Message: <span class="required">*</span></label>
+                                <textarea id="demo-message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit">Send Message</button>
+                        </form>
+                        <p><em>This is a working form demo (submission disabled for safety)</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Form Attributes</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Purpose</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>action</code></td>
+                            <td>Where to send form data</td>
+                            <td><code>action="/submit"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>method</code></td>
+                            <td>HTTP method (GET/POST)</td>
+                            <td><code>method="post"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>enctype</code></td>
+                            <td>Encoding type for form data</td>
+                            <td><code>enctype="multipart/form-data"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>target</code></td>
+                            <td>Where to display response</td>
+                            <td><code>target="_blank"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>novalidate</code></td>
+                            <td>Disable browser validation</td>
+                            <td><code>novalidate</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>autocomplete</code></td>
+                            <td>Enable/disable autocomplete</td>
+                            <td><code>autocomplete="off"</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Input Elements</h2>
+                
+                <div class="example">
+                    <h3>Basic Input Types</h3>
+                    <div class="code-example">&lt;!-- Text input --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username" placeholder="Enter username"&gt;
+
+&lt;!-- Email input --&gt;
+&lt;label for="user-email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="user-email" name="email" placeholder="user@example.com"&gt;
+
+&lt;!-- Password input --&gt;
+&lt;label for="password"&gt;Password:&lt;/label&gt;
+&lt;input type="password" id="password" name="password"&gt;
+
+&lt;!-- Number input --&gt;
+&lt;label for="age"&gt;Age:&lt;/label&gt;
+&lt;input type="number" id="age" name="age" min="0" max="120"&gt;</div>
+                    
+                    <div class="result">
+                        <form class="demo-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="demo-username">Username:</label>
+                                <input type="text" id="demo-username" name="username" placeholder="Enter username">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-user-email">Email:</label>
+                                <input type="email" id="demo-user-email" name="email" placeholder="user@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-password">Password:</label>
+                                <input type="password" id="demo-password" name="password">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-age">Age:</label>
+                                <input type="number" id="demo-age" name="age" min="0" max="120">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Selection Controls</h2>
+                
+                <div class="example">
+                    <h3>Radio Buttons, Checkboxes, and Dropdowns</h3>
+                    <div class="code-example">&lt;!-- Radio buttons --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Choose your plan:&lt;/legend&gt;
+    &lt;input type="radio" id="basic" name="plan" value="basic"&gt;
+    &lt;label for="basic"&gt;Basic Plan&lt;/label&gt;
+    
+    &lt;input type="radio" id="premium" name="plan" value="premium"&gt;
+    &lt;label for="premium"&gt;Premium Plan&lt;/label&gt;
+    
+    &lt;input type="radio" id="enterprise" name="plan" value="enterprise"&gt;
+    &lt;label for="enterprise"&gt;Enterprise Plan&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;!-- Checkboxes --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Select features:&lt;/legend&gt;
+    &lt;input type="checkbox" id="feature1" name="features" value="analytics"&gt;
+    &lt;label for="feature1"&gt;Analytics&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="feature2" name="features" value="support"&gt;
+    &lt;label for="feature2"&gt;Priority Support&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="feature3" name="features" value="backup"&gt;
+    &lt;label for="feature3"&gt;Daily Backups&lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;!-- Dropdown select --&gt;
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value=""&gt;Select a country&lt;/option&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="ca"&gt;Canada&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+    &lt;option value="au"&gt;Australia&lt;/option&gt;
+&lt;/select&gt;</div>
+                    
+                    <div class="result">
+                        <form class="demo-form" onsubmit="return false;">
+                            <fieldset style="border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                                <legend style="padding: 0 10px; font-weight: bold;">Choose your plan:</legend>
+                                <div style="margin: 10px 0;">
+                                    <input type="radio" id="demo-basic" name="demo-plan" value="basic">
+                                    <label for="demo-basic" style="display: inline; margin-left: 5px; font-weight: normal;">Basic Plan</label>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <input type="radio" id="demo-premium" name="demo-plan" value="premium">
+                                    <label for="demo-premium" style="display: inline; margin-left: 5px; font-weight: normal;">Premium Plan</label>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <input type="radio" id="demo-enterprise" name="demo-plan" value="enterprise">
+                                    <label for="demo-enterprise" style="display: inline; margin-left: 5px; font-weight: normal;">Enterprise Plan</label>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset style="border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 4px;">
+                                <legend style="padding: 0 10px; font-weight: bold;">Select features:</legend>
+                                <div style="margin: 10px 0;">
+                                    <input type="checkbox" id="demo-feature1" name="demo-features" value="analytics">
+                                    <label for="demo-feature1" style="display: inline; margin-left: 5px; font-weight: normal;">Analytics</label>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <input type="checkbox" id="demo-feature2" name="demo-features" value="support">
+                                    <label for="demo-feature2" style="display: inline; margin-left: 5px; font-weight: normal;">Priority Support</label>
+                                </div>
+                                <div style="margin: 10px 0;">
+                                    <input type="checkbox" id="demo-feature3" name="demo-features" value="backup">
+                                    <label for="demo-feature3" style="display: inline; margin-left: 5px; font-weight: normal;">Daily Backups</label>
+                                </div>
+                            </fieldset>
+                            
+                            <div class="form-group">
+                                <label for="demo-country">Country:</label>
+                                <select id="demo-country" name="country">
+                                    <option value="">Select a country</option>
+                                    <option value="us">United States</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="au">Australia</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Label Association</h2>
+                <p>Proper label association is crucial for accessibility and usability.</p>
+                
+                <div class="example">
+                    <h3>Different Label Methods</h3>
+                    <div class="code-example">&lt;!-- Method 1: for/id association (recommended) --&gt;
+&lt;label for="email-method1"&gt;Email Address:&lt;/label&gt;
+&lt;input type="email" id="email-method1" name="email1"&gt;
+
+&lt;!-- Method 2: nested label --&gt;
+&lt;label&gt;
+    Phone Number:
+    &lt;input type="tel" name="phone"&gt;
+&lt;/label&gt;
+
+&lt;!-- Method 3: aria-labelledby for complex associations --&gt;
+&lt;div id="address-label"&gt;Home Address&lt;/div&gt;
+&lt;input type="text" name="address" aria-labelledby="address-label"&gt;</div>
+                    
+                    <div class="result">
+                        <form class="demo-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="demo-email-method1">Email Address:</label>
+                                <input type="email" id="demo-email-method1" name="email1">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="display: block;">
+                                    Phone Number:
+                                    <input type="tel" name="phone" style="margin-top: 5px;">
+                                </label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div id="demo-address-label" style="font-weight: bold; margin-bottom: 5px;">Home Address</div>
+                                <input type="text" name="address" aria-labelledby="demo-address-label">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Form Validation</h2>
+                
+                <div class="example">
+                    <h3>HTML5 Validation Attributes</h3>
+                    <div class="code-example">&lt;form&gt;
+    &lt;!-- Required field --&gt;
+    &lt;label for="required-field"&gt;Required Field:&lt;/label&gt;
+    &lt;input type="text" id="required-field" name="required" required&gt;
+    
+    &lt;!-- Minimum and maximum length --&gt;
+    &lt;label for="username-val"&gt;Username (3-20 characters):&lt;/label&gt;
+    &lt;input type="text" id="username-val" name="username" 
+           minlength="3" maxlength="20" required&gt;
+    
+    &lt;!-- Pattern validation --&gt;
+    &lt;label for="phone-val"&gt;Phone (XXX-XXX-XXXX):&lt;/label&gt;
+    &lt;input type="tel" id="phone-val" name="phone" 
+           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+           placeholder="123-456-7890"&gt;
+    
+    &lt;!-- Number range --&gt;
+    &lt;label for="rating"&gt;Rating (1-10):&lt;/label&gt;
+    &lt;input type="number" id="rating" name="rating" 
+           min="1" max="10" step="1"&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</div>
+                    
+                    <div class="result">
+                        <form class="demo-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="demo-required-field">Required Field: <span class="required">*</span></label>
+                                <input type="text" id="demo-required-field" name="required" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-username-val">Username (3-20 characters): <span class="required">*</span></label>
+                                <input type="text" id="demo-username-val" name="username" 
+                                       minlength="3" maxlength="20" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-phone-val">Phone (XXX-XXX-XXXX):</label>
+                                <input type="tel" id="demo-phone-val" name="phone" 
+                                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                                       placeholder="123-456-7890">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="demo-rating">Rating (1-10):</label>
+                                <input type="number" id="demo-rating" name="rating" 
+                                       min="1" max="10" step="1">
+                            </div>
+                            
+                            <button type="submit">Submit</button>
+                        </form>
+                        <p><em>Try submitting without filling required fields to see validation messages</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Button Types</h2>
+                
+                <div class="example">
+                    <h3>Different Button Functions</h3>
+                    <div class="code-example">&lt;!-- Submit button (default) --&gt;
+&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+
+&lt;!-- Reset button --&gt;
+&lt;button type="reset"&gt;Reset Form&lt;/button&gt;
+
+&lt;!-- Generic button --&gt;
+&lt;button type="button" onclick="doSomething()"&gt;Custom Action&lt;/button&gt;
+
+&lt;!-- Input submit button --&gt;
+&lt;input type="submit" value="Submit with Input"&gt;
+
+&lt;!-- Disabled button --&gt;
+&lt;button type="submit" disabled&gt;Please Complete Form&lt;/button&gt;</div>
+                    
+                    <div class="result">
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button type="submit" onclick="return false;">Submit Form</button>
+                            <button type="reset">Reset Form</button>
+                            <button type="button" onclick="alert('Custom action!')">Custom Action</button>
+                            <input type="submit" value="Submit with Input" onclick="return false;">
+                            <button type="submit" disabled>Please Complete Form</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Inline Forms</h2>
+                <p>For simpler forms, you can arrange elements horizontally.</p>
+                
+                <div class="example">
+                    <h3>Search Form Example</h3>
+                    <div class="code-example">&lt;form class="search-form"&gt;
+    &lt;label for="search-query"&gt;Search:&lt;/label&gt;
+    &lt;input type="search" id="search-query" name="q" placeholder="Enter search terms"&gt;
+    &lt;button type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;</div>
+                    
+                    <div class="result">
+                        <form class="inline-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="demo-search-query">Search:</label>
+                                <input type="search" id="demo-search-query" name="q" placeholder="Enter search terms">
+                            </div>
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Newsletter Signup</h3>
+                    <div class="code-example">&lt;form class="newsletter-form"&gt;
+    &lt;label for="newsletter-email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="newsletter-email" name="email" 
+           placeholder="your@email.com" required&gt;
+    &lt;button type="submit"&gt;Subscribe&lt;/button&gt;
+&lt;/form&gt;</div>
+                    
+                    <div class="result">
+                        <form class="inline-form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="demo-newsletter-email">Email:</label>
+                                <input type="email" id="demo-newsletter-email" name="email" 
+                                       placeholder="your@email.com" required>
+                            </div>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Form Accessibility Best Practices</h2>
+                
+                <div class="tip">
+                    <h3>✅ Form Accessibility Guidelines</h3>
+                    <ul>
+                        <li><strong>Always use labels</strong> - Every form control needs a label</li>
+                        <li><strong>Group related fields</strong> - Use fieldset and legend for groups</li>
+                        <li><strong>Indicate required fields</strong> - Use visual and programmatic indicators</li>
+                        <li><strong>Provide clear instructions</strong> - Help users understand what's expected</li>
+                        <li><strong>Use descriptive error messages</strong> - Tell users how to fix problems</li>
+                        <li><strong>Ensure keyboard navigation</strong> - All controls should be reachable via Tab</li>
+                        <li><strong>Test with screen readers</strong> - Verify the form works with assistive technology</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Common Form Mistakes</h2>
+                
+                <div class="warning">
+                    <h3>❌ Avoid These Form Mistakes</h3>
+                    <ul>
+                        <li><strong>Missing labels</strong> - Every input needs an associated label</li>
+                        <li><strong>Poor placeholder usage</strong> - Placeholders don't replace labels</li>
+                        <li><strong>No validation feedback</strong> - Users need to know when something's wrong</li>
+                        <li><strong>Unclear required fields</strong> - Mark required fields clearly</li>
+                        <li><strong>Complex forms without organization</strong> - Use fieldsets to group related fields</li>
+                        <li><strong>Auto-submit forms</strong> - Give users control over form submission</li>
+                        <li><strong>Too many required fields</strong> - Only require what's absolutely necessary</li>
+                        <li><strong>Poor mobile experience</strong> - Test forms on mobile devices</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./input-types.html">Learn about Input Types</a></p>
+            <p><a href="../04-tables/advanced-tables.html">← Previous: Advanced Tables</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about HTML paragraphs and text formatting elements">
+    <title>Paragraphs and Text Formatting | HTML Learning</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-line;
+        }
+        .result {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .warning {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .tip {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .comparison > div {
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .semantic {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        .presentational {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Paragraphs and Text Formatting</h1>
+            <p><strong>Text Formatting Lesson 2:</strong> Structuring and formatting text content</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>HTML Paragraphs</h2>
+                <p>The <code>&lt;p&gt;</code> element is used to create paragraphs of text. It's one of the most common elements in HTML and automatically adds space before and after the content.</p>
+                
+                <div class="example">
+                    <h3>Basic Paragraph Usage</h3>
+                    <div class="code-example">&lt;p&gt;This is a paragraph of text. It contains multiple sentences that form a cohesive thought or idea.&lt;/p&gt;
+
+&lt;p&gt;This is another paragraph. HTML automatically adds space between paragraphs, making the content easier to read.&lt;/p&gt;
+
+&lt;p&gt;Even if you write
+text on multiple lines
+in your HTML file,
+it will display as a single paragraph with normal spacing.&lt;/p&gt;</div>
+                    
+                    <div class="result">
+                        <p>This is a paragraph of text. It contains multiple sentences that form a cohesive thought or idea.</p>
+                        <p>This is another paragraph. HTML automatically adds space between paragraphs, making the content easier to read.</p>
+                        <p>Even if you write
+text on multiple lines
+in your HTML file,
+it will display as a single paragraph with normal spacing.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Line Breaks and Horizontal Rules</h2>
+                
+                <h3>Line Breaks (&lt;br&gt;)</h3>
+                <p>Use <code>&lt;br&gt;</code> to create line breaks within text without starting a new paragraph.</p>
+                
+                <div class="code-example">&lt;p&gt;First line of text&lt;br&gt;
+Second line of text&lt;br&gt;
+Third line of text&lt;/p&gt;
+
+&lt;address&gt;
+John Doe&lt;br&gt;
+123 Main Street&lt;br&gt;
+Anytown, USA 12345
+&lt;/address&gt;</div>
+                
+                <div class="result">
+                    <p>First line of text<br>
+                    Second line of text<br>
+                    Third line of text</p>
+                    
+                    <address>
+                    John Doe<br>
+                    123 Main Street<br>
+                    Anytown, USA 12345
+                    </address>
+                </div>
+                
+                <h3>Horizontal Rules (&lt;hr&gt;)</h3>
+                <p>Use <code>&lt;hr&gt;</code> to create thematic breaks between content sections.</p>
+                
+                <div class="code-example">&lt;p&gt;Content before the break.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Content after the break.&lt;/p&gt;</div>
+                
+                <div class="result">
+                    <p>Content before the break.</p>
+                    <hr>
+                    <p>Content after the break.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Text Formatting Elements</h2>
+                
+                <h3>Semantic vs Presentational Elements</h3>
+                <p>HTML provides both semantic elements (that describe meaning) and presentational elements (that describe appearance). Modern web development favors semantic elements.</p>
+                
+                <div class="comparison">
+                    <div class="semantic">
+                        <h4>✅ Semantic Elements (Recommended)</h4>
+                        <ul>
+                            <li><code>&lt;strong&gt;</code> - Important text</li>
+                            <li><code>&lt;em&gt;</code> - Emphasized text</li>
+                            <li><code>&lt;mark&gt;</code> - Highlighted text</li>
+                            <li><code>&lt;code&gt;</code> - Computer code</li>
+                            <li><code>&lt;kbd&gt;</code> - Keyboard input</li>
+                            <li><code>&lt;samp&gt;</code> - Sample output</li>
+                        </ul>
+                    </div>
+                    <div class="presentational">
+                        <h4>❌ Presentational Elements (Avoid)</h4>
+                        <ul>
+                            <li><code>&lt;b&gt;</code> - Bold text</li>
+                            <li><code>&lt;i&gt;</code> - Italic text</li>
+                            <li><code>&lt;u&gt;</code> - Underlined text</li>
+                            <li><code>&lt;big&gt;</code> - Bigger text</li>
+                            <li><code>&lt;small&gt;</code> - Smaller text</li>
+                            <li><code>&lt;font&gt;</code> - Font styling</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Semantic Text Elements</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Purpose</th>
+                            <th>Default Appearance</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;strong&gt;</code></td>
+                            <td>Important, serious, urgent text</td>
+                            <td>Bold</td>
+                            <td><strong>Important notice</strong></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;em&gt;</code></td>
+                            <td>Emphasized text</td>
+                            <td>Italic</td>
+                            <td><em>Emphasized text</em></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;mark&gt;</code></td>
+                            <td>Highlighted text</td>
+                            <td>Yellow background</td>
+                            <td><mark>Highlighted text</mark></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;small&gt;</code></td>
+                            <td>Fine print, disclaimers</td>
+                            <td>Smaller text</td>
+                            <td><small>Fine print text</small></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;del&gt;</code></td>
+                            <td>Deleted text</td>
+                            <td>Strikethrough</td>
+                            <td><del>Deleted text</del></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;ins&gt;</code></td>
+                            <td>Inserted text</td>
+                            <td>Underline</td>
+                            <td><ins>Inserted text</ins></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;sub&gt;</code></td>
+                            <td>Subscript text</td>
+                            <td>Lower baseline</td>
+                            <td>H<sub>2</sub>O</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;sup&gt;</code></td>
+                            <td>Superscript text</td>
+                            <td>Higher baseline</td>
+                            <td>x<sup>2</sup></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Practical Examples</h2>
+                
+                <div class="example">
+                    <h3>Example 1: Article Text</h3>
+                    <div class="code-example">&lt;p&gt;The &lt;strong&gt;COVID-19 pandemic&lt;/strong&gt; has significantly impacted global travel. According to recent studies, travel bookings dropped by &lt;em&gt;over 90%&lt;/em&gt; during peak lockdown periods.&lt;/p&gt;
+
+&lt;p&gt;&lt;mark&gt;Important update:&lt;/mark&gt; Travel restrictions are gradually being lifted as vaccination rates increase worldwide.&lt;/p&gt;</div>
+                    
+                    <div class="result">
+                        <p>The <strong>COVID-19 pandemic</strong> has significantly impacted global travel. According to recent studies, travel bookings dropped by <em>over 90%</em> during peak lockdown periods.</p>
+                        <p><mark>Important update:</mark> Travel restrictions are gradually being lifted as vaccination rates increase worldwide.</p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Example 2: Technical Documentation</h3>
+                    <div class="code-example">&lt;p&gt;To create a new file, use the &lt;kbd&gt;Ctrl+N&lt;/kbd&gt; keyboard shortcut or run the &lt;code&gt;touch filename.txt&lt;/code&gt; command in the terminal.&lt;/p&gt;
+
+&lt;p&gt;The system will output: &lt;samp&gt;File created successfully&lt;/samp&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;Note: This command works on Unix-based systems only.&lt;/small&gt;&lt;/p&gt;</div>
+                    
+                    <div class="result">
+                        <p>To create a new file, use the <kbd>Ctrl+N</kbd> keyboard shortcut or run the <code>touch filename.txt</code> command in the terminal.</p>
+                        <p>The system will output: <samp>File created successfully</samp></p>
+                        <p><small>Note: This command works on Unix-based systems only.</small></p>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Example 3: Scientific Content</h3>
+                    <div class="code-example">&lt;p&gt;Water (H&lt;sub&gt;2&lt;/sub&gt;O) is essential for life. The chemical formula shows that each molecule contains two hydrogen atoms and one oxygen atom.&lt;/p&gt;
+
+&lt;p&gt;Einstein's famous equation E=mc&lt;sup&gt;2&lt;/sup&gt; demonstrates the relationship between mass and energy.&lt;/p&gt;
+
+&lt;p&gt;The old theory stated that &lt;del&gt;the atom was indivisible&lt;/del&gt;. We now know that &lt;ins&gt;atoms contain subatomic particles&lt;/ins&gt;.&lt;/p&gt;</div>
+                    
+                    <div class="result">
+                        <p>Water (H<sub>2</sub>O) is essential for life. The chemical formula shows that each molecule contains two hydrogen atoms and one oxygen atom.</p>
+                        <p>Einstein's famous equation E=mc<sup>2</sup> demonstrates the relationship between mass and energy.</p>
+                        <p>The old theory stated that <del>the atom was indivisible</del>. We now know that <ins>atoms contain subatomic particles</ins>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Quotations and Citations</h2>
+                
+                <h3>Inline Quotations (&lt;q&gt;)</h3>
+                <div class="code-example">&lt;p&gt;As Einstein once said, &lt;q&gt;Imagination is more important than knowledge.&lt;/q&gt;&lt;/p&gt;</div>
+                
+                <div class="result">
+                    <p>As Einstein once said, <q>Imagination is more important than knowledge.</q></p>
+                </div>
+
+                <h3>Block Quotations (&lt;blockquote&gt;)</h3>
+                <div class="code-example">&lt;blockquote cite="https://example.com/speech"&gt;
+    &lt;p&gt;To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles.&lt;/p&gt;
+    &lt;cite&gt;— William Shakespeare, Hamlet&lt;/cite&gt;
+&lt;/blockquote&gt;</div>
+                
+                <div class="result">
+                    <blockquote cite="https://example.com/speech" style="border-left: 4px solid #ccc; margin: 20px 0; padding-left: 20px; font-style: italic;">
+                        <p>To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune, or to take arms against a sea of troubles.</p>
+                        <cite>— William Shakespeare, Hamlet</cite>
+                    </blockquote>
+                </div>
+
+                <h3>Citations (&lt;cite&gt;)</h3>
+                <div class="code-example">&lt;p&gt;This information was found in &lt;cite&gt;The Complete Guide to HTML&lt;/cite&gt; by Jane Doe.&lt;/p&gt;</div>
+                
+                <div class="result">
+                    <p>This information was found in <cite>The Complete Guide to HTML</cite> by Jane Doe.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Preformatted Text</h2>
+                <p>The <code>&lt;pre&gt;</code> element preserves spaces, line breaks, and formatting exactly as written.</p>
+                
+                <div class="code-example">&lt;pre&gt;
+function greetUser(name) {
+    if (name) {
+        console.log("Hello, " + name + "!");
+    } else {
+        console.log("Hello, World!");
+    }
+}
+&lt;/pre&gt;</div>
+                
+                <div class="result">
+                    <pre style="background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+function greetUser(name) {
+    if (name) {
+        console.log("Hello, " + name + "!");
+    } else {
+        console.log("Hello, World!");
+    }
+}</pre>
+                </div>
+            </section>
+
+            <section>
+                <h2>Best Practices</h2>
+                
+                <div class="tip">
+                    <h3>✅ Text Formatting Best Practices</h3>
+                    <ul>
+                        <li><strong>Use semantic elements</strong> - Choose elements based on meaning, not appearance</li>
+                        <li><strong>Don't overuse formatting</strong> - Too much emphasis loses its impact</li>
+                        <li><strong>Use CSS for styling</strong> - Separate content from presentation</li>
+                        <li><strong>Consider accessibility</strong> - Screen readers understand semantic elements better</li>
+                        <li><strong>Be consistent</strong> - Use the same elements for the same types of content</li>
+                        <li><strong>Test readability</strong> - Ensure formatted text is easy to read</li>
+                    </ul>
+                </div>
+
+                <div class="warning">
+                    <h3>❌ Common Mistakes</h3>
+                    <ul>
+                        <li><strong>Using &lt;br&gt; for spacing</strong> - Use CSS margins instead</li>
+                        <li><strong>Multiple &lt;br&gt; tags</strong> - Use paragraph elements instead</li>
+                        <li><strong>Using &lt;b&gt; and &lt;i&gt;</strong> - Use &lt;strong&gt; and &lt;em&gt; instead</li>
+                        <li><strong>Forgetting alt attributes</strong> - Always provide alternative text</li>
+                        <li><strong>Overusing emphasis</strong> - Too much bold/italic text is hard to read</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd;">
+            <p><strong>Next:</strong> <a href="./lists.html">Learn about HTML Lists</a></p>
+            <p><a href="./headings.html">← Previous: HTML Headings</a> | <a href="../README.md">Back to Main Menu</a></p>
+        </footer>
+    </div>
+</body>
+</html>
